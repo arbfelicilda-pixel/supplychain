@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory Health Calculator — Arnie Rose Supply Chain</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;--gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;--green:#27AE60;--yellow:#F39C12;--red:#E74C3C;--heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}
+.nav-logo span{color:var(--orange)}
+.nav-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}
+.nav-back:hover{color:var(--black)}
+
+/* LOCKED SCREEN */
+#locked{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+.lock-card{max-width:460px;width:100%;text-align:center}
+.lock-icon{font-size:48px;margin-bottom:24px}
+.lock-title{font-family:var(--heading);font-size:36px;font-weight:400;color:var(--black);margin-bottom:12px}
+.lock-sub{font-family:var(--body);font-size:15px;font-weight:300;color:var(--gray-text);line-height:1.7;margin-bottom:32px}
+.pin-row{display:flex;gap:0;max-width:320px;margin:0 auto 12px}
+.pin-input{flex:1;padding:14px 16px;font-family:var(--body);font-size:22px;font-weight:600;letter-spacing:0.2em;border:1.5px solid var(--gray-mid);border-right:none;color:var(--black);outline:none;text-align:center;transition:border-color 0.2s}
+.pin-input:focus{border-color:var(--black)}
+.pin-btn{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 20px;border:1.5px solid var(--orange);cursor:pointer;white-space:nowrap}
+.pin-btn:hover{background:#c43d12}
+.pin-error{font-family:var(--body);font-size:13px;color:var(--red);text-align:center;display:none;margin-bottom:8px}
+.pin-error.show{display:block}
+.lock-link{font-family:var(--body);font-size:13px;color:var(--orange);text-decoration:none}
+.lock-link:hover{text-decoration:underline}
+
+/* TOOL */
+#tool{display:none;flex:1;flex-direction:column}
+#tool.visible{display:flex}
+.tool-hero{background:var(--black);padding:48px 60px 40px}
+.tool-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.tool-title{font-family:var(--heading);font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--white);margin-bottom:8px}
+.tool-sub{font-family:var(--body);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6}
+
+.tool-body{max-width:880px;margin:0 auto;width:100%;padding:48px 60px 80px}
+
+/* SECTION */
+.calc-section{margin-bottom:40px}
+.calc-section-title{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--gray-mid)}
+
+/* INPUTS */
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.input-group{display:flex;flex-direction:column;gap:6px}
+.input-label{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black)}
+.input-hint{font-family:var(--body);font-size:11px;font-weight:300;color:var(--gray-text);line-height:1.4}
+.input-wrap{display:flex;align-items:center;border:1.5px solid var(--gray-mid);background:var(--white);transition:border-color 0.2s}
+.input-wrap:focus-within{border-color:var(--black)}
+.input-prefix{font-family:var(--body);font-size:14px;font-weight:500;color:var(--gray-text);padding:0 12px;border-right:1px solid var(--gray-mid);height:44px;display:flex;align-items:center;background:var(--gray-light)}
+.input-suffix{font-family:var(--body);font-size:14px;font-weight:500;color:var(--gray-text);padding:0 12px;border-left:1px solid var(--gray-mid);height:44px;display:flex;align-items:center;background:var(--gray-light)}
+.calc-input{flex:1;height:44px;padding:0 12px;font-family:var(--body);font-size:15px;font-weight:500;color:var(--black);border:none;outline:none;background:transparent}
+
+/* CALCULATE BUTTON */
+.calc-btn{background:var(--black);color:var(--white);font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:16px 40px;border:none;cursor:pointer;margin-top:8px;transition:background 0.2s;display:block}
+.calc-btn:hover{background:var(--orange)}
+
+/* RESULTS */
+.results{display:none;margin-top:40px}
+.results.visible{display:block}
+.results-header{background:var(--black);padding:28px 32px;margin-bottom:1px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.results-title{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+.grade-badge{font-family:var(--heading);font-size:52px;font-weight:400;line-height:1}
+.grade-A{color:#2ECC71}.grade-B{color:#F1C40F}.grade-C{color:#E67E22}.grade-D{color:var(--red)}.grade-F{color:#C0392B}
+
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-mid);margin-bottom:24px}
+.result-box{background:var(--white);padding:24px 20px}
+.result-label{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-text);margin-bottom:8px}
+.result-value{font-family:var(--heading);font-size:32px;font-weight:400;color:var(--black);margin-bottom:4px}
+.result-status{font-family:var(--body);font-size:12px;font-weight:500}
+.status-good{color:var(--green)}.status-warn{color:var(--yellow)}.status-bad{color:var(--red)}
+
+.action-box{background:var(--gray-light);border-left:3px solid var(--orange);padding:24px 28px;margin-bottom:24px}
+.action-box-title{font-family:var(--body);font-size:13px;font-weight:600;color:var(--black);margin-bottom:10px}
+.action-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.action-list li{font-family:var(--body);font-size:14px;color:var(--black);display:flex;gap:10px;line-height:1.5}
+.action-list li::before{content:'→';color:var(--orange);font-weight:600;flex-shrink:0}
+
+.reset-btn{font-family:var(--body);font-size:12px;font-weight:500;color:var(--gray-text);background:none;border:1px solid var(--gray-mid);padding:10px 20px;cursor:pointer;transition:all 0.2s}
+.reset-btn:hover{border-color:var(--black);color:var(--black)}
+
+footer{background:var(--gray-light);border-top:1px solid var(--gray-mid);padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;flex-shrink:0}
+.footer-copy{font-family:var(--body);font-size:12px;color:var(--gray-text)}
+.footer-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .tool-hero{padding:32px 20px}
+  .tool-body{padding:32px 20px 60px}
+  .input-grid{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr 1fr}
+  footer{padding:20px}
+}
+@media(max-width:480px){
+  .results-grid{grid-template-columns:1fr}
+  .pin-row{max-width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a>
+  <a href="/" class="nav-back">← Back to Home</a>
+</nav>
+
+<!-- LOCKED -->
+<div id="locked">
+  <div class="lock-card">
+    <div class="lock-icon">🔒</div>
+    <h1 class="lock-title">Subscriber Access Only</h1>
+    <p class="lock-sub">This tool is free — but reserved for subscribers. Enter your 4-digit PIN from your welcome email to unlock.</p>
+    <div class="pin-row">
+      <input type="text" class="pin-input" id="pin-input" maxlength="4" placeholder="••••" inputmode="numeric">
+      <button class="pin-btn" onclick="checkPin()">Unlock</button>
+    </div>
+    <p class="pin-error" id="pin-error">Incorrect PIN. Check your welcome email.</p>
+    <a href="gate-inventory-health.html" class="lock-link">Don't have a PIN? Subscribe here →</a>
+  </div>
+</div>
+
+<!-- TOOL -->
+<div id="tool">
+
+  <div class="tool-hero">
+    <p class="tool-eyebrow">Free Tool — Subscriber Access</p>
+    <h1 class="tool-title">Inventory Health Calculator</h1>
+    <p class="tool-sub">Enter your numbers. Get your inventory health score, carrying cost percentage, and a prioritized action list — in under 5 minutes.</p>
+  </div>
+
+  <div class="tool-body">
+
+    <div class="calc-section">
+      <p class="calc-section-title">Inventory Value</p>
+      <div class="input-grid">
+        <div class="input-group">
+          <label class="input-label">Beginning inventory value</label>
+          <p class="input-hint">Value of inventory at start of period</p>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" class="calc-input" id="inv-begin" placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Ending inventory value</label>
+          <p class="input-hint">Value of inventory at end of period</p>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" class="calc-input" id="inv-end" placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Cost of Goods Sold (COGS)</label>
+          <p class="input-hint">Total cost of products sold in the period</p>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" class="calc-input" id="cogs" placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Period length</label>
+          <p class="input-hint">Number of days in your measurement period</p>
+          <div class="input-wrap">
+            <input type="number" class="calc-input" id="days" placeholder="365" min="1" value="365">
+            <span class="input-suffix">days</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-section">
+      <p class="calc-section-title">Annual Carrying Costs</p>
+      <div class="input-grid">
+        <div class="input-group">
+          <label class="input-label">Annual storage and warehousing</label>
+          <p class="input-hint">Rent, utilities, racking allocated to inventory</p>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" class="calc-input" id="storage" placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Annual insurance cost</label>
+          <p class="input-hint">Inventory insurance premium</p>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" class="calc-input" id="insurance" placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Annual write-offs and obsolescence</label>
+          <p class="input-hint">Spoilage, damage, expired, discontinued</p>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input type="number" class="calc-input" id="obsolescence" placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Capital cost rate</label>
+          <p class="input-hint">Your cost of capital or opportunity rate</p>
+          <div class="input-wrap">
+            <input type="number" class="calc-input" id="capital-rate" placeholder="10" min="0" max="100" value="10">
+            <span class="input-suffix">%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-section">
+      <p class="calc-section-title">Operational Performance</p>
+      <div class="input-grid">
+        <div class="input-group">
+          <label class="input-label">Total orders in period</label>
+          <p class="input-hint">Number of customer or production orders</p>
+          <div class="input-wrap">
+            <input type="number" class="calc-input" id="total-orders" placeholder="0" min="0">
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Stockout incidents in period</label>
+          <p class="input-hint">Times an item was requested but unavailable</p>
+          <div class="input-wrap">
+            <input type="number" class="calc-input" id="stockouts" placeholder="0" min="0">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="calculate()">Calculate My Inventory Health Score</button>
+
+    <!-- RESULTS -->
+    <div class="results" id="results">
+
+      <div class="results-header">
+        <div>
+          <p class="results-title">Overall Inventory Health Grade</p>
+          <p style="font-family:var(--body);font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);margin-top:4px" id="grade-note"></p>
+        </div>
+        <div class="grade-badge" id="grade-badge">—</div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-box">
+          <p class="result-label">Inventory Turnover</p>
+          <p class="result-value" id="r-turnover">—</p>
+          <p class="result-status" id="s-turnover"></p>
+        </div>
+        <div class="result-box">
+          <p class="result-label">Days Sales of Inventory</p>
+          <p class="result-value" id="r-dsi">—</p>
+          <p class="result-status" id="s-dsi"></p>
+        </div>
+        <div class="result-box">
+          <p class="result-label">Carrying Cost</p>
+          <p class="result-value" id="r-carry">—</p>
+          <p class="result-status" id="s-carry"></p>
+        </div>
+        <div class="result-box">
+          <p class="result-label">Stockout Rate</p>
+          <p class="result-value" id="r-stockout">—</p>
+          <p class="result-status" id="s-stockout"></p>
+        </div>
+        <div class="result-box">
+          <p class="result-label">Annual Carrying Cost $</p>
+          <p class="result-value" id="r-carry-dollar">—</p>
+          <p class="result-status" id="s-carry-dollar"></p>
+        </div>
+        <div class="result-box">
+          <p class="result-label">Capital Tied Up Cost</p>
+          <p class="result-value" id="r-capital">—</p>
+          <p class="result-status" id="s-capital"></p>
+        </div>
+      </div>
+
+      <div class="action-box">
+        <p class="action-box-title">Priority Actions Based on Your Numbers</p>
+        <ul class="action-list" id="action-list"></ul>
+      </div>
+
+      <button class="reset-btn" onclick="resetCalc()">← Start Over</button>
+
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
+  <a href="/" class="footer-back">supplychain.arniefelicilda.com</a>
+</footer>
+
+<script>
+const CORRECT_PIN = "2564";
+const STORAGE_KEY = "scm_tool_inventory";
+
+// ── PIN GATE ──────────────────────────────────────
+function checkPin(){
+  const v = document.getElementById('pin-input').value.trim();
+  if(v === CORRECT_PIN){
+    localStorage.setItem(STORAGE_KEY,'unlocked');
+    unlock();
+  } else {
+    document.getElementById('pin-error').classList.add('show');
+    document.getElementById('pin-input').value='';
+    document.getElementById('pin-input').focus();
+  }
+}
+document.getElementById('pin-input').addEventListener('keydown',function(e){
+  if(e.key==='Enter') checkPin();
+});
+function unlock(){
+  document.getElementById('locked').style.display='none';
+  document.getElementById('tool').classList.add('visible');
+}
+if(localStorage.getItem(STORAGE_KEY)==='unlocked') unlock();
+
+// ── CALCULATOR ────────────────────────────────────
+function val(id){ return parseFloat(document.getElementById(id).value)||0; }
+
+function fmt(n,dec=1){ return n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+function fmtDollar(n){ return '$'+n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+
+function setResult(id,text){ document.getElementById(id).textContent=text; }
+function setStatus(id,text,cls){
+  const el=document.getElementById(id);
+  el.textContent=text;
+  el.className='result-status '+cls;
+}
+
+function calculate(){
+  const invBegin   = val('inv-begin');
+  const invEnd     = val('inv-end');
+  const cogs       = val('cogs');
+  const days       = val('days')||365;
+  const storage    = val('storage');
+  const insurance  = val('insurance');
+  const obsol      = val('obsolescence');
+  const capRate    = val('capital-rate')/100;
+  const totalOrders= val('total-orders');
+  const stockouts  = val('stockouts');
+
+  if(invBegin===0 && invEnd===0){ alert('Please enter your inventory values to continue.'); return; }
+
+  const avgInv     = (invBegin+invEnd)/2||invEnd||invBegin;
+  const capitalCost= avgInv*capRate;
+  const totalCarry = storage+insurance+obsol+capitalCost;
+  const carryPct   = avgInv>0 ? (totalCarry/avgInv)*100 : 0;
+  const turnover   = avgInv>0 && cogs>0 ? cogs/avgInv : 0;
+  const dsi        = cogs>0 ? (avgInv/cogs)*days : 0;
+  const stockoutRate= totalOrders>0 ? (stockouts/totalOrders)*100 : 0;
+
+  // Scores (0–100 each)
+  let scores=[];
+  // Turnover: >6 = good, 4-6 = ok, <4 = bad
+  const tScore = turnover>=6?100:turnover>=4?70:turnover>=2?40:20;
+  scores.push(tScore);
+  // DSI: <60=good, 60-90=ok, >90=bad
+  const dsiScore = dsi<=60?100:dsi<=90?65:dsi<=120?40:20;
+  scores.push(dsiScore);
+  // Carry: <20%=good, 20-25%=ok, >25%=bad
+  const cScore = carryPct<20?100:carryPct<25?70:carryPct<30?45:20;
+  scores.push(cScore);
+  // Stockout: <2%=good, 2-5%=ok, >5%=bad
+  const sScore = totalOrders>0?(stockoutRate<2?100:stockoutRate<5?70:stockoutRate<10?40:20):80;
+  scores.push(sScore);
+
+  const avg = scores.reduce((a,b)=>a+b,0)/scores.length;
+  const grade = avg>=85?'A':avg>=70?'B':avg>=55?'C':avg>=40?'D':'F';
+  const gradeClass = 'grade-'+grade;
+  const gradeNotes = {
+    'A':'Healthy inventory. Focus on maintaining these levels.',
+    'B':'Good performance. Two or more areas need attention.',
+    'C':'Moderate risk. Carrying cost or turnover needs work.',
+    'D':'High risk. Multiple areas require immediate action.',
+    'F':'Critical. Inventory health is severely impacting cash flow.'
+  };
+
+  const badge=document.getElementById('grade-badge');
+  badge.textContent=grade;
+  badge.className='grade-badge '+gradeClass;
+  document.getElementById('grade-note').textContent=gradeNotes[grade];
+
+  // Turnover
+  if(turnover>0){
+    setResult('r-turnover', fmt(turnover)+'×');
+    setStatus('s-turnover', turnover>=6?'✓ Strong':turnover>=4?'⚠ Watch':'✗ Low — investigate', turnover>=6?'status-good':turnover>=4?'status-warn':'status-bad');
+  } else { setResult('r-turnover','N/A'); setStatus('s-turnover','Enter COGS to calculate',''); }
+
+  // DSI
+  if(dsi>0){
+    setResult('r-dsi', fmt(dsi,0)+' days');
+    setStatus('s-dsi', dsi<=60?'✓ Healthy':dsi<=90?'⚠ Monitor':'✗ Too high — cash locked', dsi<=60?'status-good':dsi<=90?'status-warn':'status-bad');
+  } else { setResult('r-dsi','N/A'); setStatus('s-dsi','Enter COGS to calculate',''); }
+
+  // Carrying cost %
+  setResult('r-carry', fmt(carryPct,1)+'%');
+  setStatus('s-carry', carryPct<20?'✓ Well-managed':carryPct<25?'⚠ Industry average':carryPct<30?'✗ Above average':'✗ Critical — review now', carryPct<20?'status-good':carryPct<25?'status-warn':'status-bad');
+
+  // Stockout rate
+  if(totalOrders>0){
+    setResult('r-stockout', fmt(stockoutRate,1)+'%');
+    setStatus('s-stockout', stockoutRate<2?'✓ Excellent':stockoutRate<5?'⚠ Acceptable':'✗ High — reorder points off', stockoutRate<2?'status-good':stockoutRate<5?'status-warn':'status-bad');
+  } else { setResult('r-stockout','N/A'); setStatus('s-stockout','Enter order data to calculate',''); }
+
+  // Dollar amounts
+  setResult('r-carry-dollar', fmtDollar(totalCarry)+'/yr');
+  setStatus('s-carry-dollar','Total annual holding cost','');
+
+  setResult('r-capital', fmtDollar(capitalCost)+'/yr');
+  setStatus('s-capital','Opportunity cost of capital','');
+
+  // Action list
+  const actions=[];
+  if(carryPct>=25) actions.push('Your carrying cost is '+fmt(carryPct,1)+'% — review slow-moving SKUs and reduce reorder quantities on C items.');
+  if(dsi>90) actions.push('DSI of '+fmt(dsi,0)+' days means cash is locked for 3+ months. Run an ABC analysis and tighten reorder quantities on A items.');
+  if(turnover>0 && turnover<4) actions.push('Turnover of '+fmt(turnover)+'× is below target. Identify your bottom 20% of SKUs by velocity and evaluate for discontinuation.');
+  if(totalOrders>0 && stockoutRate>=5) actions.push('Stockout rate of '+fmt(stockoutRate,1)+'% is too high. Review reorder points on your top 10 A items immediately.');
+  if(obsol>avgInv*0.1) actions.push('Obsolescence write-offs are over 10% of inventory value. Implement a quarterly slow-mover review and liquidation policy.');
+  if(capitalCost>avgInv*0.12) actions.push('Capital cost is high. Consider faster payment terms with customers or smaller, more frequent purchase orders.');
+  if(actions.length===0) actions.push('Strong performance across all metrics. Focus on maintaining reorder point accuracy and monthly cycle counts on A items.');
+
+  const ul=document.getElementById('action-list');
+  ul.innerHTML=actions.map(a=>'<li>'+a+'</li>').join('');
+
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetCalc(){
+  document.getElementById('results').classList.remove('visible');
+  document.querySelectorAll('.calc-input').forEach(i=>{ if(i.id!=='days'&&i.id!=='capital-rate') i.value=''; });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

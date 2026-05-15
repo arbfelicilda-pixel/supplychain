@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stockout Risk Checker — Arnie Rose Supply Chain</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;--gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;--green:#27AE60;--yellow:#F39C12;--red:#E74C3C;--heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}.nav-logo span{color:var(--orange)}
+.nav-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}
+#locked{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+.lock-card{max-width:460px;width:100%;text-align:center}
+.lock-icon{font-size:48px;margin-bottom:24px}
+.lock-title{font-family:var(--heading);font-size:36px;color:var(--black);margin-bottom:12px}
+.lock-sub{font-family:var(--body);font-size:15px;font-weight:300;color:var(--gray-text);line-height:1.7;margin-bottom:32px}
+.pin-row{display:flex;gap:0;max-width:320px;margin:0 auto 12px}
+.pin-input{flex:1;padding:14px 16px;font-family:var(--body);font-size:22px;font-weight:600;letter-spacing:0.2em;border:1.5px solid var(--gray-mid);border-right:none;color:var(--black);outline:none;text-align:center}
+.pin-btn{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 20px;border:1.5px solid var(--orange);cursor:pointer}
+.pin-error{font-family:var(--body);font-size:13px;color:var(--red);text-align:center;display:none;margin-bottom:8px}
+.pin-error.show{display:block}
+.lock-link{font-family:var(--body);font-size:13px;color:var(--orange);text-decoration:none}
+#tool{display:none;flex:1;flex-direction:column}
+#tool.visible{display:flex}
+.tool-hero{background:var(--black);padding:48px 60px 40px}
+.tool-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.tool-title{font-family:var(--heading);font-size:clamp(28px,4vw,44px);color:var(--white);margin-bottom:8px}
+.tool-sub{font-family:var(--body);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6}
+.tool-body{max-width:860px;margin:0 auto;width:100%;padding:48px 60px 80px}
+.section-title{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--gray-mid)}
+.sku-tabs{display:flex;gap:0;margin-bottom:32px;flex-wrap:wrap}
+.tab-btn{font-family:var(--body);font-size:13px;font-weight:500;padding:10px 20px;border:1px solid var(--gray-mid);border-right:none;background:var(--white);cursor:pointer;color:var(--gray-text);transition:all 0.2s}
+.tab-btn:last-child{border-right:1px solid var(--gray-mid)}
+.tab-btn.active{background:var(--black);color:var(--white);border-color:var(--black)}
+.sku-panel{display:none}
+.sku-panel.active{display:block}
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.input-group{display:flex;flex-direction:column;gap:6px}
+.input-label{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black)}
+.input-hint{font-family:var(--body);font-size:11px;color:var(--gray-text);line-height:1.4}
+.input-wrap{display:flex;align-items:center;border:1.5px solid var(--gray-mid);transition:border-color 0.2s}
+.input-wrap:focus-within{border-color:var(--black)}
+.suffix{font-family:var(--body);font-size:13px;color:var(--gray-text);padding:0 12px;border-left:1px solid var(--gray-mid);height:44px;display:flex;align-items:center;background:var(--gray-light)}
+.c-input{flex:1;height:44px;padding:0 12px;font-family:var(--body);font-size:15px;font-weight:500;color:var(--black);border:none;outline:none;background:transparent}
+.name-input{width:100%;height:44px;padding:0 14px;font-family:var(--body);font-size:15px;font-weight:500;color:var(--black);border:1.5px solid var(--gray-mid);outline:none;margin-bottom:20px;transition:border-color 0.2s}
+.name-input:focus{border-color:var(--black)}
+.calc-btn{background:var(--black);color:var(--white);font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:16px 40px;border:none;cursor:pointer;transition:background 0.2s;display:block}
+.calc-btn:hover{background:var(--orange)}
+.results{display:none;margin-top:40px}
+.results.visible{display:block}
+.results-header{background:var(--black);padding:28px 32px;margin-bottom:1px}
+.results-title{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px}
+.sku-result-grid{display:grid;gap:1px;background:var(--gray-mid);margin-bottom:24px}
+.sku-result-header{display:grid;grid-template-columns:160px repeat(4,1fr);background:var(--black);padding:12px 16px;gap:1px}
+.sku-result-header span{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-align:center}
+.sku-result-header span:first-child{text-align:left}
+.sku-result-row{display:grid;grid-template-columns:160px repeat(4,1fr);background:var(--white);gap:1px}
+.sku-cell{padding:14px 12px;font-family:var(--body);font-size:14px;font-weight:500;color:var(--black);text-align:center}
+.sku-cell:first-child{text-align:left;font-weight:600}
+.risk-high{color:var(--red);font-weight:700}
+.risk-med{color:var(--yellow);font-weight:600}
+.risk-low{color:var(--green);font-weight:600}
+.action-box{background:var(--gray-light);border-left:3px solid var(--orange);padding:24px 28px;margin-bottom:24px}
+.action-title{font-family:var(--body);font-size:13px;font-weight:600;color:var(--black);margin-bottom:10px}
+.action-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.action-list li{font-family:var(--body);font-size:14px;color:var(--black);display:flex;gap:10px;line-height:1.5}
+.action-list li::before{content:'→';color:var(--orange);font-weight:600;flex-shrink:0}
+.reset-btn{font-family:var(--body);font-size:12px;font-weight:500;color:var(--gray-text);background:none;border:1px solid var(--gray-mid);padding:10px 20px;cursor:pointer}
+.reset-btn:hover{border-color:var(--black);color:var(--black)}
+footer{background:var(--gray-light);border-top:1px solid var(--gray-mid);padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;flex-shrink:0}
+.footer-copy{font-family:var(--body);font-size:12px;color:var(--gray-text)}
+.footer-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}
+@media(max-width:768px){nav{padding:0 20px}.tool-hero{padding:32px 20px}.tool-body{padding:32px 20px 60px}.input-grid{grid-template-columns:1fr}.sku-result-header{grid-template-columns:100px repeat(4,1fr)}.sku-result-row{grid-template-columns:100px repeat(4,1fr)}footer{padding:20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a>
+  <a href="/" class="nav-back">← Back to Home</a>
+</nav>
+
+<div id="locked">
+  <div class="lock-card">
+    <div class="lock-icon">🔒</div>
+    <h1 class="lock-title">Subscriber Access Only</h1>
+    <p class="lock-sub">This tool is free — but reserved for subscribers. Enter your 4-digit PIN from your welcome email to unlock.</p>
+    <div class="pin-row">
+      <input type="text" class="pin-input" id="pin-input" maxlength="4" placeholder="••••" inputmode="numeric">
+      <button class="pin-btn" onclick="checkPin()">Unlock</button>
+    </div>
+    <p class="pin-error" id="pin-error">Incorrect PIN. Check your welcome email.</p>
+    <a href="gate-stockout-risk.html" class="lock-link">Don't have a PIN? Subscribe here →</a>
+  </div>
+</div>
+
+<div id="tool">
+  <div class="tool-hero">
+    <p class="tool-eyebrow">Free Tool — Subscriber Access</p>
+    <h1 class="tool-title">Stockout Risk Checker</h1>
+    <p class="tool-sub">Enter your SKU data. Get your reorder point, safety stock requirement, and stockout risk level — before a gap hits your shelves.</p>
+  </div>
+
+  <div class="tool-body">
+    <p class="section-title">Enter SKU Data — Up to 3 SKUs</p>
+
+    <div class="sku-tabs">
+      <button class="tab-btn active" onclick="showTab(0)">SKU 1</button>
+      <button class="tab-btn" onclick="showTab(1)">SKU 2</button>
+      <button class="tab-btn" onclick="showTab(2)">SKU 3</button>
+    </div>
+
+    <!-- SKU panels -->
+    <div id="panels">
+    </div>
+
+    <button class="calc-btn" onclick="checkRisk()">Check Stockout Risk</button>
+
+    <div class="results" id="results">
+      <div class="results-header">
+        <p class="results-title">Stockout Risk Assessment</p>
+      </div>
+      <div class="sku-result-grid">
+        <div class="sku-result-header">
+          <span>SKU</span><span>Reorder Point</span><span>Safety Stock</span><span>Days of Cover</span><span>Risk Level</span>
+        </div>
+        <div id="result-rows"></div>
+      </div>
+      <div class="action-box">
+        <p class="action-title">Priority Actions</p>
+        <ul class="action-list" id="action-list"></ul>
+      </div>
+      <button class="reset-btn" onclick="resetTool()">← Start Over</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
+  <a href="/" class="footer-back">supplychain.arniefelicilda.com</a>
+</footer>
+
+<script>
+const CORRECT_PIN="1228";
+const STORAGE_KEY="scm_tool_stockout";
+
+function checkPin(){
+  const v=document.getElementById('pin-input').value.trim();
+  if(v===CORRECT_PIN){localStorage.setItem(STORAGE_KEY,'unlocked');unlock();}
+  else{document.getElementById('pin-error').classList.add('show');document.getElementById('pin-input').value='';document.getElementById('pin-input').focus();}
+}
+document.getElementById('pin-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkPin();});
+function unlock(){document.getElementById('locked').style.display='none';document.getElementById('tool').classList.add('visible');buildPanels();}
+if(localStorage.getItem(STORAGE_KEY)==='unlocked'){unlock();}
+
+function buildPanels(){
+  const container=document.getElementById('panels');
+  for(let i=0;i<3;i++){
+    const active=i===0?'active':'';
+    container.innerHTML+=`
+    <div class="sku-panel ${active}" id="panel-${i}">
+      <input type="text" class="name-input" id="name-${i}" placeholder="SKU name or code (e.g. SKU-001 Widget A)">
+      <div class="input-grid">
+        <div class="input-group">
+          <label class="input-label">Average daily demand</label>
+          <p class="input-hint">Average units sold or consumed per day</p>
+          <div class="input-wrap"><input type="number" class="c-input" id="demand-${i}" placeholder="0" min="0" step="0.1"><span class="suffix">units/day</span></div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Supplier lead time</label>
+          <p class="input-hint">Average days from order to delivery</p>
+          <div class="input-wrap"><input type="number" class="c-input" id="lead-${i}" placeholder="0" min="0"><span class="suffix">days</span></div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Lead time variability</label>
+          <p class="input-hint">Max days delivery has ever been late</p>
+          <div class="input-wrap"><input type="number" class="c-input" id="lead-var-${i}" placeholder="0" min="0"><span class="suffix">days</span></div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Demand variability</label>
+          <p class="input-hint">Max daily demand above your average</p>
+          <div class="input-wrap"><input type="number" class="c-input" id="demand-var-${i}" placeholder="0" min="0" step="0.1"><span class="suffix">units/day</span></div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Current stock on hand</label>
+          <p class="input-hint">Units currently in inventory</p>
+          <div class="input-wrap"><input type="number" class="c-input" id="stock-${i}" placeholder="0" min="0"><span class="suffix">units</span></div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Current reorder point</label>
+          <p class="input-hint">The level at which you currently reorder</p>
+          <div class="input-wrap"><input type="number" class="c-input" id="rop-${i}" placeholder="0" min="0"><span class="suffix">units</span></div>
+        </div>
+      </div>
+    </div>`;
+  }
+}
+
+function showTab(i){
+  document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  document.querySelectorAll('.sku-panel').forEach((p,j)=>p.classList.toggle('active',j===i));
+}
+
+function gv(id){return parseFloat(document.getElementById(id).value)||0;}
+function gs(id){return document.getElementById(id).value.trim();}
+function fmt1(n){return n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});}
+
+function checkRisk(){
+  const skus=[];
+  for(let i=0;i<3;i++){
+    const demand=gv('demand-'+i);
+    const lead=gv('lead-'+i);
+    if(demand===0&&lead===0) continue;
+    const leadVar=gv('lead-var-'+i);
+    const demandVar=gv('demand-var-'+i);
+    const stock=gv('stock-'+i);
+    const currentROP=gv('rop-'+i);
+    const name=gs('name-'+i)||('SKU '+(i+1));
+
+    // Safety stock = (max daily demand × max lead time) - (avg daily demand × avg lead time)
+    const maxDemand=demand+demandVar;
+    const maxLead=lead+leadVar;
+    const safetyStock=Math.max(0,(maxDemand*maxLead)-(demand*lead));
+
+    // Reorder point = (avg demand × avg lead time) + safety stock
+    const reorderPoint=(demand*lead)+safetyStock;
+
+    // Days of cover = current stock / avg daily demand
+    const daysOfCover=demand>0?stock/demand:0;
+
+    // Risk: compare current stock + current ROP vs calculated
+    const ropGap=reorderPoint-currentROP;
+    const risk=daysOfCover<lead*0.8?'HIGH':ropGap>demand*5?'MEDIUM':'LOW';
+
+    skus.push({name,demand,lead,safetyStock,reorderPoint,daysOfCover,currentROP,ropGap,risk});
+  }
+
+  if(skus.length===0){alert('Please enter data for at least one SKU.');return;}
+
+  let rowsHTML='';
+  skus.forEach(s=>{
+    const riskClass=s.risk==='HIGH'?'risk-high':s.risk==='MEDIUM'?'risk-med':'risk-low';
+    rowsHTML+=`<div class="sku-result-row">
+      <div class="sku-cell">${s.name}</div>
+      <div class="sku-cell">${fmt1(s.reorderPoint)} units</div>
+      <div class="sku-cell">${fmt1(s.safetyStock)} units</div>
+      <div class="sku-cell">${s.daysOfCover.toFixed(0)} days</div>
+      <div class="sku-cell ${riskClass}">${s.risk}</div>
+    </div>`;
+  });
+  document.getElementById('result-rows').innerHTML=rowsHTML;
+
+  const actions=[];
+  skus.forEach(s=>{
+    if(s.risk==='HIGH') actions.push(s.name+': Days of cover ('+s.daysOfCover.toFixed(0)+' days) is below lead time ('+s.lead+' days). Reorder immediately. New reorder point: '+fmt1(s.reorderPoint)+' units.');
+    if(s.risk==='MEDIUM'&&s.ropGap>0) actions.push(s.name+': Current reorder point is '+fmt1(s.currentROP)+' units. Calculated reorder point is '+fmt1(s.reorderPoint)+'. Increase reorder point by '+fmt1(s.ropGap)+' units to prevent stockout risk.');
+    if(s.safetyStock>s.demand*s.lead*0.5) actions.push(s.name+': Safety stock requirement of '+fmt1(s.safetyStock)+' units is high due to lead time or demand variability. Work with your supplier to reduce delivery variance.');
+  });
+  if(actions.length===0) actions.push('All SKUs have adequate reorder points and days of cover. Review again before any peak demand period or if supplier lead times change.');
+
+  document.getElementById('action-list').innerHTML=actions.map(a=>'<li>'+a+'</li>').join('');
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetTool(){
+  document.getElementById('results').classList.remove('visible');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

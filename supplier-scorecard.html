@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier Scorecard — Arnie Rose Supply Chain</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;--gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;--green:#27AE60;--yellow:#F39C12;--red:#E74C3C;--heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}
+.nav-logo span{color:var(--orange)}
+.nav-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}
+.nav-back:hover{color:var(--black)}
+#locked{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+.lock-card{max-width:460px;width:100%;text-align:center}
+.lock-icon{font-size:48px;margin-bottom:24px}
+.lock-title{font-family:var(--heading);font-size:36px;font-weight:400;color:var(--black);margin-bottom:12px}
+.lock-sub{font-family:var(--body);font-size:15px;font-weight:300;color:var(--gray-text);line-height:1.7;margin-bottom:32px}
+.pin-row{display:flex;gap:0;max-width:320px;margin:0 auto 12px}
+.pin-input{flex:1;padding:14px 16px;font-family:var(--body);font-size:22px;font-weight:600;letter-spacing:0.2em;border:1.5px solid var(--gray-mid);border-right:none;color:var(--black);outline:none;text-align:center;transition:border-color 0.2s}
+.pin-input:focus{border-color:var(--black)}
+.pin-btn{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 20px;border:1.5px solid var(--orange);cursor:pointer}
+.pin-btn:hover{background:#c43d12}
+.pin-error{font-family:var(--body);font-size:13px;color:var(--red);text-align:center;display:none;margin-bottom:8px}
+.pin-error.show{display:block}
+.lock-link{font-family:var(--body);font-size:13px;color:var(--orange);text-decoration:none}
+#tool{display:none;flex:1;flex-direction:column}
+#tool.visible{display:flex}
+.tool-hero{background:var(--black);padding:48px 60px 40px}
+.tool-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.tool-title{font-family:var(--heading);font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--white);margin-bottom:8px}
+.tool-sub{font-family:var(--body);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6}
+.tool-body{max-width:960px;margin:0 auto;width:100%;padding:48px 60px 80px}
+.section-title{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--gray-mid)}
+.supplier-tabs{display:flex;gap:0;margin-bottom:32px;flex-wrap:wrap}
+.tab-btn{font-family:var(--body);font-size:13px;font-weight:500;padding:10px 20px;border:1px solid var(--gray-mid);border-right:none;background:var(--white);cursor:pointer;color:var(--gray-text);transition:all 0.2s}
+.tab-btn:last-child{border-right:1px solid var(--gray-mid)}
+.tab-btn.active{background:var(--black);color:var(--white);border-color:var(--black)}
+.tab-btn:hover:not(.active){background:var(--gray-light)}
+.supplier-panel{display:none}
+.supplier-panel.active{display:block}
+.score-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.score-group{display:flex;flex-direction:column;gap:6px}
+.score-label{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black)}
+.score-hint{font-family:var(--body);font-size:11px;font-weight:300;color:var(--gray-text);line-height:1.4}
+.score-input-wrap{display:flex;align-items:center;border:1.5px solid var(--gray-mid);background:var(--white);transition:border-color 0.2s}
+.score-input-wrap:focus-within{border-color:var(--black)}
+.score-suffix{font-family:var(--body);font-size:13px;color:var(--gray-text);padding:0 12px;border-left:1px solid var(--gray-mid);height:44px;display:flex;align-items:center;background:var(--gray-light)}
+.score-prefix{font-family:var(--body);font-size:13px;color:var(--gray-text);padding:0 12px;border-right:1px solid var(--gray-mid);height:44px;display:flex;align-items:center;background:var(--gray-light)}
+.s-input{flex:1;height:44px;padding:0 12px;font-family:var(--body);font-size:15px;font-weight:500;color:var(--black);border:none;outline:none;background:transparent}
+.name-input{width:100%;height:44px;padding:0 14px;font-family:var(--body);font-size:15px;font-weight:500;color:var(--black);border:1.5px solid var(--gray-mid);outline:none;margin-bottom:20px;transition:border-color 0.2s}
+.name-input:focus{border-color:var(--black)}
+.calc-btn{background:var(--black);color:var(--white);font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:16px 40px;border:none;cursor:pointer;margin-top:8px;transition:background 0.2s;display:block}
+.calc-btn:hover{background:var(--orange)}
+.results{display:none;margin-top:40px}
+.results.visible{display:block}
+.results-header{background:var(--black);padding:28px 32px;margin-bottom:1px}
+.results-title{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px}
+.results-sub{font-family:var(--body);font-size:13px;font-weight:300;color:rgba(255,255,255,0.4)}
+.scoreboard{display:grid;gap:1px;background:var(--gray-mid);margin-bottom:24px}
+.score-row-header{display:grid;grid-template-columns:180px repeat(5,1fr);gap:1px;background:var(--black);padding:12px 16px}
+.score-row-header span{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-align:center}
+.score-row-header span:first-child{text-align:left}
+.score-data-row{display:grid;grid-template-columns:180px repeat(5,1fr);gap:1px;background:var(--gray-mid)}
+.score-cell{background:var(--white);padding:16px 12px;text-align:center;font-family:var(--body);font-size:14px;font-weight:500;color:var(--black)}
+.score-cell:first-child{text-align:left;font-weight:600}
+.score-cell.best{background:#F0FFF4;color:var(--green);font-weight:700}
+.score-cell.worst{background:#FFF5F5;color:var(--red)}
+.winner-bar{background:var(--orange);padding:20px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.winner-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7)}
+.winner-name{font-family:var(--heading);font-size:28px;font-weight:400;color:var(--white)}
+.action-box{background:var(--gray-light);border-left:3px solid var(--orange);padding:24px 28px;margin-bottom:24px}
+.action-box-title{font-family:var(--body);font-size:13px;font-weight:600;color:var(--black);margin-bottom:10px}
+.action-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.action-list li{font-family:var(--body);font-size:14px;color:var(--black);display:flex;gap:10px;line-height:1.5}
+.action-list li::before{content:'→';color:var(--orange);font-weight:600;flex-shrink:0}
+.reset-btn{font-family:var(--body);font-size:12px;font-weight:500;color:var(--gray-text);background:none;border:1px solid var(--gray-mid);padding:10px 20px;cursor:pointer}
+.reset-btn:hover{border-color:var(--black);color:var(--black)}
+footer{background:var(--gray-light);border-top:1px solid var(--gray-mid);padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;flex-shrink:0}
+.footer-copy{font-family:var(--body);font-size:12px;color:var(--gray-text)}
+.footer-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}
+@media(max-width:768px){nav{padding:0 20px}.tool-hero{padding:32px 20px}.tool-body{padding:32px 20px 60px}.score-grid{grid-template-columns:1fr}.score-row-header{grid-template-columns:120px repeat(5,1fr)}.score-data-row{grid-template-columns:120px repeat(5,1fr)}footer{padding:20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a>
+  <a href="/" class="nav-back">← Back to Home</a>
+</nav>
+
+<div id="locked">
+  <div class="lock-card">
+    <div class="lock-icon">🔒</div>
+    <h1 class="lock-title">Subscriber Access Only</h1>
+    <p class="lock-sub">This tool is free — but reserved for subscribers. Enter your 4-digit PIN from your welcome email to unlock.</p>
+    <div class="pin-row">
+      <input type="text" class="pin-input" id="pin-input" maxlength="4" placeholder="••••" inputmode="numeric">
+      <button class="pin-btn" onclick="checkPin()">Unlock</button>
+    </div>
+    <p class="pin-error" id="pin-error">Incorrect PIN. Check your welcome email.</p>
+    <a href="gate-supplier-scorecard.html" class="lock-link">Don't have a PIN? Subscribe here →</a>
+  </div>
+</div>
+
+<div id="tool">
+  <div class="tool-hero">
+    <p class="tool-eyebrow">Free Tool — Subscriber Access</p>
+    <h1 class="tool-title">Supplier Scorecard</h1>
+    <p class="tool-sub">Rate up to 3 suppliers across 5 dimensions. Get a weighted score, a ranked comparison, and a clear recommended decision.</p>
+  </div>
+
+  <div class="tool-body">
+    <p class="section-title">Enter Supplier Data</p>
+
+    <div class="supplier-tabs">
+      <button class="tab-btn active" onclick="showTab(0)">Supplier 1</button>
+      <button class="tab-btn" onclick="showTab(1)">Supplier 2</button>
+      <button class="tab-btn" onclick="showTab(2)">Supplier 3</button>
+    </div>
+
+    <!-- SUPPLIER 1 -->
+    <div class="supplier-panel active" id="panel-0">
+      <input type="text" class="name-input" id="name-0" placeholder="Supplier name (e.g. ABC Manufacturing)">
+      <div class="score-grid">
+        <div class="score-group">
+          <label class="score-label">Unit price</label>
+          <p class="score-hint">Price per unit quoted</p>
+          <div class="score-input-wrap"><span class="score-prefix">$</span><input type="number" class="s-input" id="price-0" placeholder="0" min="0" step="0.01"></div>
+        </div>
+        <div class="score-group">
+          <label class="score-label">Lead time</label>
+          <p class="score-hint">Average days from order to delivery</p>
+          <div class="score-input-wrap"><input type="number" class="s-input" id="lead-0" placeholder="0" min="0"><span class="score-suffix">days</span></div>
+        </div>
+        <div class="score-group">
+          <label class="score-label">On-time delivery rate</label>
+          <p class="score-hint">% of orders delivered on time last 12 months</p>
+          <div class="score-input-wrap"><input type="number" class="s-input" id="otd-0" placeholder="95" min="0" max="100"><span class="score-suffix">%</span></div>
+        </div>
+        <div class="score-group">
+          <label class="score-label">Defect / return rate</label>
+          <p class="score-hint">% of units with quality issues last 12 months</p>
+          <div class="score-input-wrap"><input type="number" class="s-input" id="defect-0" placeholder="1" min="0" max="100" step="0.1"><span class="score-suffix">%</span></div>
+        </div>
+        <div class="score-group">
+          <label class="score-label">Freight cost per unit</label>
+          <p class="score-hint">Average landed freight cost per unit</p>
+          <div class="score-input-wrap"><span class="score-prefix">$</span><input type="number" class="s-input" id="freight-0" placeholder="0" min="0" step="0.01"></div>
+        </div>
+        <div class="score-group">
+          <label class="score-label">Minimum order quantity</label>
+          <p class="score-hint">Minimum units per order</p>
+          <div class="score-input-wrap"><input type="number" class="s-input" id="moq-0" placeholder="0" min="0"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPLIER 2 -->
+    <div class="supplier-panel" id="panel-1">
+      <input type="text" class="name-input" id="name-1" placeholder="Supplier name (e.g. XYZ Global)">
+      <div class="score-grid">
+        <div class="score-group"><label class="score-label">Unit price</label><p class="score-hint">Price per unit quoted</p><div class="score-input-wrap"><span class="score-prefix">$</span><input type="number" class="s-input" id="price-1" placeholder="0" min="0" step="0.01"></div></div>
+        <div class="score-group"><label class="score-label">Lead time</label><p class="score-hint">Average days from order to delivery</p><div class="score-input-wrap"><input type="number" class="s-input" id="lead-1" placeholder="0" min="0"><span class="score-suffix">days</span></div></div>
+        <div class="score-group"><label class="score-label">On-time delivery rate</label><p class="score-hint">% of orders delivered on time</p><div class="score-input-wrap"><input type="number" class="s-input" id="otd-1" placeholder="95" min="0" max="100"><span class="score-suffix">%</span></div></div>
+        <div class="score-group"><label class="score-label">Defect / return rate</label><p class="score-hint">% of units with quality issues</p><div class="score-input-wrap"><input type="number" class="s-input" id="defect-1" placeholder="1" min="0" max="100" step="0.1"><span class="score-suffix">%</span></div></div>
+        <div class="score-group"><label class="score-label">Freight cost per unit</label><p class="score-hint">Average landed freight cost per unit</p><div class="score-input-wrap"><span class="score-prefix">$</span><input type="number" class="s-input" id="freight-1" placeholder="0" min="0" step="0.01"></div></div>
+        <div class="score-group"><label class="score-label">Minimum order quantity</label><p class="score-hint">Minimum units per order</p><div class="score-input-wrap"><input type="number" class="s-input" id="moq-1" placeholder="0" min="0"></div></div>
+      </div>
+    </div>
+
+    <!-- SUPPLIER 3 -->
+    <div class="supplier-panel" id="panel-2">
+      <input type="text" class="name-input" id="name-2" placeholder="Supplier name (optional)">
+      <div class="score-grid">
+        <div class="score-group"><label class="score-label">Unit price</label><p class="score-hint">Price per unit quoted</p><div class="score-input-wrap"><span class="score-prefix">$</span><input type="number" class="s-input" id="price-2" placeholder="0" min="0" step="0.01"></div></div>
+        <div class="score-group"><label class="score-label">Lead time</label><p class="score-hint">Average days from order to delivery</p><div class="score-input-wrap"><input type="number" class="s-input" id="lead-2" placeholder="0" min="0"><span class="score-suffix">days</span></div></div>
+        <div class="score-group"><label class="score-label">On-time delivery rate</label><p class="score-hint">% of orders delivered on time</p><div class="score-input-wrap"><input type="number" class="s-input" id="otd-2" placeholder="95" min="0" max="100"><span class="score-suffix">%</span></div></div>
+        <div class="score-group"><label class="score-label">Defect / return rate</label><p class="score-hint">% of units with quality issues</p><div class="score-input-wrap"><input type="number" class="s-input" id="defect-2" placeholder="1" min="0" max="100" step="0.1"><span class="score-suffix">%</span></div></div>
+        <div class="score-group"><label class="score-label">Freight cost per unit</label><p class="score-hint">Average landed freight cost per unit</p><div class="score-input-wrap"><span class="score-prefix">$</span><input type="number" class="s-input" id="freight-2" placeholder="0" min="0" step="0.01"></div></div>
+        <div class="score-group"><label class="score-label">Minimum order quantity</label><p class="score-hint">Minimum units per order</p><div class="score-input-wrap"><input type="number" class="s-input" id="moq-2" placeholder="0" min="0"></div></div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="scoreSuppliers()">Generate Supplier Scorecard</button>
+
+    <div class="results" id="results">
+      <div class="results-header">
+        <p class="results-title">Supplier Scorecard Results</p>
+        <p class="results-sub">Weighted score across price, reliability, quality, lead time, and total cost</p>
+      </div>
+      <div id="scoreboard-wrap"></div>
+      <div class="winner-bar" id="winner-bar">
+        <div><p class="winner-label">Recommended Supplier</p><p class="winner-name" id="winner-name">—</p></div>
+        <div style="font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.8)" id="winner-score"></div>
+      </div>
+      <div class="action-box">
+        <p class="action-box-title">Key Findings</p>
+        <ul class="action-list" id="action-list"></ul>
+      </div>
+      <button class="reset-btn" onclick="resetTool()">← Start Over</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
+  <a href="/" class="footer-back">supplychain.arniefelicilda.com</a>
+</footer>
+
+<script>
+const CORRECT_PIN="6798";
+const STORAGE_KEY="scm_tool_supplier";
+
+function checkPin(){
+  const v=document.getElementById('pin-input').value.trim();
+  if(v===CORRECT_PIN){localStorage.setItem(STORAGE_KEY,'unlocked');unlock();}
+  else{document.getElementById('pin-error').classList.add('show');document.getElementById('pin-input').value='';document.getElementById('pin-input').focus();}
+}
+document.getElementById('pin-input').addEventListener('keydown',function(e){if(e.key==='Enter')checkPin();});
+function unlock(){document.getElementById('locked').style.display='none';document.getElementById('tool').classList.add('visible');}
+if(localStorage.getItem(STORAGE_KEY)==='unlocked')unlock();
+
+function showTab(i){
+  document.querySelectorAll('.tab-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  document.querySelectorAll('.supplier-panel').forEach((p,j)=>p.classList.toggle('active',j===i));
+}
+
+function gv(id){return parseFloat(document.getElementById(id).value)||0;}
+function gs(id){return document.getElementById(id).value.trim();}
+function fmt2(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+
+function scoreSuppliers(){
+  const suppliers=[];
+  for(let i=0;i<3;i++){
+    const price=gv('price-'+i);
+    const lead=gv('lead-'+i);
+    const otd=gv('otd-'+i)||95;
+    const defect=gv('defect-'+i);
+    const freight=gv('freight-'+i);
+    const moq=gv('moq-'+i);
+    const name=gs('name-'+i)||('Supplier '+(i+1));
+    if(price===0&&i>0&&lead===0) continue;
+    suppliers.push({name,price,lead,otd,defect,freight,moq,totalCost:price+freight});
+  }
+  if(suppliers.length<2){alert('Please enter data for at least 2 suppliers.');return;}
+
+  // Score each dimension (higher = better)
+  const prices=suppliers.map(s=>s.totalCost);
+  const leads=suppliers.map(s=>s.lead);
+  const otds=suppliers.map(s=>s.otd);
+  const defects=suppliers.map(s=>s.defect);
+
+  const minPrice=Math.min(...prices.filter(p=>p>0));
+  const minLead=Math.min(...leads.filter(l=>l>0));
+  const maxOtd=Math.max(...otds);
+  const minDefect=Math.min(...defects);
+
+  suppliers.forEach(s=>{
+    s.priceScore  = minPrice>0 ? (minPrice/s.totalCost)*100 : 50;
+    s.leadScore   = minLead>0 && s.lead>0 ? (minLead/s.lead)*100 : 50;
+    s.otdScore    = maxOtd>0 ? (s.otd/maxOtd)*100 : 50;
+    s.qualityScore= minDefect>=0 ? (s.defect<=0?100:minDefect>=s.defect?100:Math.max(0,(1-(s.defect-minDefect)/10)*100)) : 50;
+    // Weighted: price 30%, reliability 25%, quality 25%, lead time 20%
+    s.totalScore  = (s.priceScore*0.30)+(s.otdScore*0.25)+(s.qualityScore*0.25)+(s.leadScore*0.20);
+  });
+
+  suppliers.sort((a,b)=>b.totalScore-a.totalScore);
+  const winner=suppliers[0];
+
+  // Build scoreboard
+  let html='<div class="score-row-header"><span>Supplier</span><span>Total Cost/Unit</span><span>Lead Time</span><span>OTD Rate</span><span>Defect Rate</span><span>Score</span></div>';
+  suppliers.forEach((s,i)=>{
+    const isBest=i===0;
+    html+=`<div class="score-data-row">
+      <div class="score-cell ${isBest?'best':''}">${s.name}</div>
+      <div class="score-cell ${s.totalCost===Math.min(...suppliers.map(x=>x.totalCost))?'best':''}">$${fmt2(s.totalCost)}</div>
+      <div class="score-cell ${s.lead===Math.min(...suppliers.map(x=>x.lead))?'best':''}"">${s.lead} days</div>
+      <div class="score-cell ${s.otd===Math.max(...suppliers.map(x=>x.otd))?'best':''}">${s.otd}%</div>
+      <div class="score-cell ${s.defect===Math.min(...suppliers.map(x=>x.defect))?'best':''}">${s.defect}%</div>
+      <div class="score-cell ${isBest?'best':''}">${s.totalScore.toFixed(0)}/100</div>
+    </div>`;
+  });
+  document.getElementById('scoreboard-wrap').innerHTML='<div class="scoreboard">'+html+'</div>';
+  document.getElementById('winner-name').textContent=winner.name;
+  document.getElementById('winner-score').textContent='Score: '+winner.totalScore.toFixed(0)+'/100';
+
+  // Actions
+  const actions=[];
+  actions.push(winner.name+' scores highest overall. Weighted across price, reliability, quality, and lead time.');
+  if(suppliers.length>1){
+    const second=suppliers[1];
+    const diff=winner.totalScore-second.totalScore;
+    if(diff<10) actions.push(second.name+' is close ('+diff.toFixed(0)+' points behind). Consider dual-sourcing to reduce single-source dependency.');
+  }
+  const highDefect=suppliers.find(s=>s.defect>3);
+  if(highDefect) actions.push(highDefect.name+' has a '+highDefect.defect+'% defect rate. At scale, quality failure cost will erode any unit price advantage.');
+  const slowLead=suppliers.find(s=>s.lead>45);
+  if(slowLead) actions.push(slowLead.name+' has a '+slowLead.lead+'-day lead time. This requires higher safety stock — add carrying cost to total cost comparison.');
+
+  document.getElementById('action-list').innerHTML=actions.map(a=>'<li>'+a+'</li>').join('');
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetTool(){
+  document.getElementById('results').classList.remove('visible');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
