@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier Scorecard — Free Access</title>
+<meta name="description" content="Get free access to the Supplier Scorecard. Enter your email and receive your PIN instantly.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;
+  --gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;
+  --heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}
+.nav-logo span{color:var(--orange)}
+.nav-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--black)}
+
+/* MAIN GATE */
+.gate-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+.gate-card{max-width:520px;width:100%}
+
+.gate-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.gate-eyebrow::before{content:'';display:block;width:20px;height:1.5px;background:var(--orange)}
+
+.gate-title{font-family:var(--heading);font-size:clamp(32px,5vw,48px);font-weight:400;line-height:1.1;color:var(--black);margin-bottom:16px}
+
+.gate-sub{font-family:var(--body);font-size:16px;font-weight:300;color:var(--gray-text);line-height:1.7;margin-bottom:32px}
+.gate-sub strong{color:var(--black);font-weight:500}
+
+/* WHAT YOU GET */
+.gate-features{background:var(--gray-light);padding:24px;margin-bottom:32px}
+.gate-features p{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-text);margin-bottom:14px}
+.gate-features ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.gate-features ul li{font-family:var(--body);font-size:15px;color:var(--black);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.gate-features ul li::before{content:'→';color:var(--orange);font-weight:600;flex-shrink:0;margin-top:1px}
+
+/* KIT FORM */
+.gate-form-wrap{margin-bottom:16px}
+.gate-form-label{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black);margin-bottom:10px;display:block}
+.gate-form{display:flex;gap:0}
+.gate-form input{flex:1;padding:14px 16px;font-family:var(--body);font-size:14px;border:1.5px solid var(--gray-mid);border-right:none;color:var(--black);outline:none;background:var(--white);transition:border-color 0.2s}
+.gate-form input:focus{border-color:var(--black)}
+.gate-form button{background:var(--black);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 24px;border:1.5px solid var(--black);cursor:pointer;white-space:nowrap;transition:background 0.2s}
+.gate-form button:hover{background:var(--orange);border-color:var(--orange)}
+
+.gate-note{font-family:var(--body);font-size:12px;color:var(--gray-text);line-height:1.6}
+.gate-note strong{color:var(--black)}
+
+/* PIN ENTRY — hidden by default */
+.pin-section{display:none;margin-top:32px;padding-top:32px;border-top:1px solid var(--gray-mid)}
+.pin-section.visible{display:block}
+.pin-label{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black);margin-bottom:10px;display:block}
+.pin-sub{font-family:var(--body);font-size:13px;font-weight:300;color:var(--gray-text);margin-bottom:16px;line-height:1.6}
+.pin-form{display:flex;gap:0}
+.pin-input{width:140px;padding:14px 16px;font-family:var(--body);font-size:22px;font-weight:600;letter-spacing:0.2em;border:1.5px solid var(--gray-mid);border-right:none;color:var(--black);outline:none;text-align:center;background:var(--white);transition:border-color 0.2s}
+.pin-input:focus{border-color:var(--black)}
+.pin-btn{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 24px;border:1.5px solid var(--orange);cursor:pointer;white-space:nowrap;transition:background 0.2s}
+.pin-btn:hover{background:#c43d12;border-color:#c43d12}
+.pin-error{font-family:var(--body);font-size:13px;color:#c0392b;margin-top:10px;display:none}
+.pin-error.visible{display:block}
+
+/* ALREADY HAVE PIN */
+.already-link{font-family:var(--body);font-size:13px;color:var(--orange);cursor:pointer;text-decoration:underline;display:inline-block;margin-top:20px;background:none;border:none;padding:0}
+
+/* FOOTER */
+footer{background:var(--gray-light);border-top:1px solid var(--gray-mid);padding:24px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;flex-shrink:0}
+.footer-copy{font-family:var(--body);font-size:12px;color:var(--gray-text)}
+.footer-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}
+.footer-back:hover{color:var(--black)}
+
+@media(max-width:600px){
+  nav{padding:0 20px}
+  .gate-form{flex-direction:column}
+  .gate-form input{border-right:1.5px solid var(--gray-mid);border-bottom:none}
+  .gate-form button{padding:14px}
+  .pin-form{flex-direction:column;max-width:280px}
+  .pin-input{border-right:1.5px solid var(--gray-mid);border-bottom:none;width:100%}
+  footer{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a>
+  <a href="/" class="nav-back">← Back to Home</a>
+</nav>
+
+<div class="gate-wrap">
+  <div class="gate-card">
+
+    <p class="gate-eyebrow">Free Tool — Gated Access</p>
+    <h1 class="gate-title">Supplier Scorecard</h1>
+    <p class="gate-sub">Rate your top suppliers on price, quality, lead time, and reliability. Access is for subscribers only. Enter your email below. Your PIN will arrive in your inbox within 2 minutes.</p>
+
+    <div class="gate-features">
+      <p>What this tool calculates</p>
+      <ul>
+        <li>Rate up to 5 suppliers side by side</li>
+        <li>Score on price, quality, lead time, reliability</li>
+        <li>Weighted total cost comparison</li>
+        <li>Risk flag for single-source dependency</li>
+        <li>Recommended supplier ranking</li>
+      </ul>
+    </div>
+
+    <div class="gate-form-wrap" id="email-section">
+      <label class="gate-form-label">Your email address</label>
+      <form class="gate-form" id="kit-form" action="https://app.kit.com/forms/9445646/subscriptions" method="post">
+        <input type="email" name="email_address" placeholder="you@company.com" required>
+        <button type="submit">Send My PIN</button>
+      </form>
+    </div>
+    <p class="gate-note">Your PIN will be emailed to you. <strong>Check your inbox and spam folder.</strong> No credit card. No paywall. Just your email.</p>
+
+    <button class="already-link" onclick="showPinSection()">Already have your PIN? Enter it here →</button>
+
+    <!-- PIN ENTRY -->
+    <div class="pin-section" id="pin-section">
+      <label class="pin-label">Enter your 4-digit PIN</label>
+      <p class="pin-sub">Check the welcome email from Arnie Rose — your PIN is listed next to "Supplier Scorecard."</p>
+      <div class="pin-form">
+        <input type="text" class="pin-input" id="pin-input" maxlength="4" placeholder="••••" inputmode="numeric">
+        <button class="pin-btn" onclick="checkPin()">Unlock →</button>
+      </div>
+      <p class="pin-error" id="pin-error">Incorrect PIN. Check your welcome email and try again.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
+  <a href="/" class="footer-back">supplychain.arniefelicilda.com</a>
+</footer>
+
+<script>
+const CORRECT_PIN = "6798";
+const TOOL_URL    = "supplier-scorecard.html";
+
+function showPinSection(){
+  document.getElementById('pin-section').classList.add('visible');
+  document.getElementById('pin-input').focus();
+}
+
+function checkPin(){
+  const entered = document.getElementById('pin-input').value.trim();
+  const err     = document.getElementById('pin-error');
+  if(entered === CORRECT_PIN){
+    // Store access so they don't re-enter on same browser
+    localStorage.setItem('scm_tool_supplier', 'unlocked');
+    window.location.href = TOOL_URL;
+  } else {
+    err.classList.add('visible');
+    document.getElementById('pin-input').value = '';
+    document.getElementById('pin-input').focus();
+  }
+}
+
+// Enter key on PIN field
+document.addEventListener('DOMContentLoaded', function(){
+  const pinInput = document.getElementById('pin-input');
+  if(pinInput){
+    pinInput.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ checkPin(); }
+    });
+  }
+});
+
+// If already unlocked in this browser, go straight to tool
+if(localStorage.getItem('scm_tool_supplier') === 'unlocked'){
+  window.location.href = TOOL_URL;
+}
+
+// After Kit form submit — show PIN section
+document.getElementById('kit-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const email = this.querySelector('input[type="email"]').value;
+  // Submit to Kit
+  fetch(this.action, {
+    method: 'POST',
+    headers: {'Content-Type':'application/x-www-form-urlencoded'},
+    body: new URLSearchParams({email_address: email})
+  }).catch(()=>{});
+  // Show PIN entry regardless
+  document.getElementById('email-section').style.opacity = '0.4';
+  document.getElementById('email-section').style.pointerEvents = 'none';
+  document.querySelector('.gate-note').innerHTML = '<strong>✓ Check your inbox</strong> — your PIN is on its way. Enter it below.';
+  document.querySelector('.already-link').style.display = 'none';
+  showPinSection();
+});
+</script>
+
+</body>
+</html>

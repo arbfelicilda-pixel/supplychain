@@ -8,6 +8,7 @@
 <meta name="keywords" content="supply chain management, inventory management, supplier scorecard, operations manager, supply chain tools, inventory calculator, procurement, logistics">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://supplychain.arniefelicilda.com">
+<link rel="sitemap" type="application/xml" href="https://supplychain.arniefelicilda.com/sitemap.xml">
 <meta property="og:title" content="Supply Chain Management — Arnie Rose Felicilda">
 <meta property="og:description" content="Free tools, templates, and frameworks for ops managers running supply chain without a manual.">
 <meta property="og:type" content="website">
@@ -65,42 +66,19 @@ body {
   margin-top: 48px;
 }
 
-.blog-card-img {
+.blog-card {
   background: var(--white);
   text-decoration: none;
   color: inherit;
   display: flex;
   flex-direction: column;
   transition: background 0.2s;
+  border-top: 2px solid transparent;
 }
 
-.blog-card-img:hover { background: var(--gray-light); }
-
-.blog-thumb {
-  width: 100%;
-  aspect-ratio: 1080 / 1620;
-  overflow: hidden;
+.blog-card:hover {
   background: var(--gray-light);
-}
-
-.blog-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.blog-card-img:hover .blog-thumb img {
-  transform: scale(1.02);
-}
-
-.blog-card-body {
-  padding: 24px 20px 28px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  border-top-color: var(--orange);
 }
 
 .blog-cat {
@@ -110,14 +88,16 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--orange);
+  margin-bottom: 10px;
 }
 
 .blog-title {
   font-family: var(--heading);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 400;
   color: var(--black);
   line-height: 1.3;
+  margin-bottom: 10px;
 }
 
 .blog-excerpt {
@@ -125,7 +105,7 @@ body {
   font-size: 13px;
   font-weight: 300;
   color: var(--gray-text);
-  line-height: 1.6;
+  line-height: 1.65;
   flex: 1;
 }
 
@@ -135,7 +115,7 @@ body {
   font-weight: 600;
   color: var(--orange);
   letter-spacing: 0.04em;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 @media(max-width: 900px) {
@@ -649,8 +629,8 @@ nav {
   width: 100%;
   aspect-ratio: 2/3;
   max-width: 160px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--white);
+  border: 1px solid rgba(255,255,255,0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -664,7 +644,7 @@ nav {
   font-family: var(--heading);
   font-size: 14px;
   font-weight: 400;
-  color: var(--white);
+  color: var(--black);
   line-height: 1.3;
 }
 
@@ -672,7 +652,7 @@ nav {
   font-family: var(--body);
   font-size: 9px;
   font-weight: 400;
-  color: rgba(255,255,255,0.3);
+  color: var(--gray-text);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 8px;
@@ -1167,11 +1147,8 @@ footer {
 
   <div class="blog-grid-full">
 
-    <a href="5-inventory-metrics-ops-managers.html" class="blog-card-img reveal" style="transition-delay:0.05s">
-      <div class="blog-thumb">
-        <img src="5-inventory-metrics.png" alt="5 Inventory Metrics Every Ops Manager Must Track" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="5-inventory-metrics-ops-managers.html" class="blog-card reveal" style="transition-delay:0.05s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Inventory Management</p>
         <p class="blog-title">5 Inventory Metrics Every Ops Manager Must Track</p>
         <p class="blog-excerpt">Most managers track the wrong numbers. These 5 actually connect to cash flow, stockout prevention, and operational health.</p>
@@ -1179,11 +1156,8 @@ footer {
       </div>
     </a>
 
-    <a href="5-inventory-kpis-that-actually-matter.html" class="blog-card-img reveal" style="transition-delay:0.08s">
-      <div class="blog-thumb">
-        <img src="5-inventory-kpis.png" alt="5 Inventory KPIs That Actually Matter" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="5-inventory-kpis-that-actually-matter.html" class="blog-card reveal" style="transition-delay:0.08s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Inventory Management</p>
         <p class="blog-title">Cutting Inventory to Save Cash? Track These 5 KPIs First</p>
         <p class="blog-excerpt">Most managers cut inventory and create stockouts within 60 days. These 5 KPIs tell you exactly where to cut — and where not to.</p>
@@ -1191,11 +1165,8 @@ footer {
       </div>
     </a>
 
-    <a href="your-inventory-is-cash-in-disguise.html" class="blog-card-img reveal" style="transition-delay:0.11s">
-      <div class="blog-thumb">
-        <img src="inventory-is-cash.png" alt="Your Inventory Is Cash in Disguise" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="your-inventory-is-cash-in-disguise.html" class="blog-card reveal" style="transition-delay:0.11s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Inventory Management</p>
         <p class="blog-title">Your Inventory Is Cash in Disguise</p>
         <p class="blog-excerpt">Every item on your shelf is cash you can't spend yet. And it's costing you 20–30% of its value every year just to sit there.</p>
@@ -1203,11 +1174,8 @@ footer {
       </div>
     </a>
 
-    <a href="abc-analysis-find-your-money.html" class="blog-card-img reveal" style="transition-delay:0.14s">
-      <div class="blog-thumb">
-        <img src="abc-analysis.png" alt="ABC Analysis — Find Where Your Money Actually Is" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="abc-analysis-find-your-money.html" class="blog-card reveal" style="transition-delay:0.14s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Inventory Management</p>
         <p class="blog-title">ABC Analysis — Find Where Your Money Actually Is</p>
         <p class="blog-excerpt">20% of your SKUs drive 80% of your revenue. ABC analysis finds that 20% in 10 minutes using data you already have.</p>
@@ -1215,11 +1183,8 @@ footer {
       </div>
     </a>
 
-    <a href="you-dont-know-your-true-inventory-cost.html" class="blog-card-img reveal" style="transition-delay:0.17s">
-      <div class="blog-thumb">
-        <img src="true-inventory-cost.png" alt="You Don't Know Your True Inventory Cost" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="you-dont-know-your-true-inventory-cost.html" class="blog-card reveal" style="transition-delay:0.17s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Inventory Management</p>
         <p class="blog-title">You Don't Know Your True Inventory Cost</p>
         <p class="blog-excerpt">That $10 product doesn't cost $10. Once freight, storage, and obsolescence are added — it's $13.08. Every pricing decision you've made is affected.</p>
@@ -1227,11 +1192,8 @@ footer {
       </div>
     </a>
 
-    <a href="total-landed-cost-calculator.html" class="blog-card-img reveal" style="transition-delay:0.20s">
-      <div class="blog-thumb">
-        <img src="total-landed-cost.png" alt="Total Landed Cost — What Freight Actually Costs" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="total-landed-cost-calculator.html" class="blog-card reveal" style="transition-delay:0.20s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Supply Chain Strategy</p>
         <p class="blog-title">Total Landed Cost — What Freight Actually Costs Beyond Unit Price</p>
         <p class="blog-excerpt">Unit price is the starting point. Landed cost — after freight, duties, and handling — is the decision point. Here is how to calculate it.</p>
@@ -1239,11 +1201,8 @@ footer {
       </div>
     </a>
 
-    <a href="supply-chain-risk-assessment.html" class="blog-card-img reveal" style="transition-delay:0.23s">
-      <div class="blog-thumb">
-        <img src="supply-chain-risk.png" alt="Supply Chain Risk Assessment — 5 Hidden Risks" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="supply-chain-risk-assessment.html" class="blog-card reveal" style="transition-delay:0.23s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Supply Chain Strategy</p>
         <p class="blog-title">Supply Chain Risk Assessment — 5 Hidden Risks Most Businesses Ignore</p>
         <p class="blog-excerpt">Five risks that consistently appear in supply chains that look stable — right before something breaks. Find them before they find you.</p>
@@ -1251,11 +1210,8 @@ footer {
       </div>
     </a>
 
-    <a href="why-cheapest-supplier-most-expensive.html" class="blog-card-img reveal" style="transition-delay:0.26s">
-      <div class="blog-thumb">
-        <img src="cheapest-supplier.png" alt="Why the Cheapest Supplier Is the Most Expensive" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="why-cheapest-supplier-most-expensive.html" class="blog-card reveal" style="transition-delay:0.26s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Supplier Management</p>
         <p class="blog-title">Why the Cheapest Supplier Is the Most Expensive Decision You Will Make</p>
         <p class="blog-excerpt">Supplier A: $8/unit. Supplier B: $9.50/unit. After total cost analysis — Supplier A costs $10.87. Supplier B costs $10.61.</p>
@@ -1263,11 +1219,8 @@ footer {
       </div>
     </a>
 
-    <a href="classify-skus-abc-analysis.html" class="blog-card-img reveal" style="transition-delay:0.29s">
-      <div class="blog-thumb">
-        <img src="classify-skus.png" alt="Classify Your SKUs in 10 Minutes" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="classify-skus-abc-analysis.html" class="blog-card reveal" style="transition-delay:0.29s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Inventory Management</p>
         <p class="blog-title">The 20% of Your Products Driving 80% of Revenue — Do You Know Which Ones?</p>
         <p class="blog-excerpt">You have 200 SKUs. 15 of them drive 80% of your revenue. Here is how to find them in 10 minutes and manage them differently.</p>
@@ -1275,11 +1228,8 @@ footer {
       </div>
     </a>
 
-    <a href="inventory-carrying-cost.html" class="blog-card-img reveal" style="transition-delay:0.32s">
-      <div class="blog-thumb">
-        <img src="inventory-carrying-cost.png" alt="Inventory Carrying Cost" loading="lazy">
-      </div>
-      <div class="blog-card-body">
+    <a href="inventory-carrying-cost.html" class="blog-card reveal" style="transition-delay:0.32s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
         <p class="blog-cat">Inventory Management</p>
         <p class="blog-title">Inventory Carrying Cost — What It Actually Costs You to Hold Stock</p>
         <p class="blog-excerpt">Carrying cost averages 20–30% of inventory value per year. On $150K inventory that is $45,000 annually. Most managers have never calculated it.</p>
