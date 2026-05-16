@@ -2,69 +2,187 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Total Landed Cost — What Freight Actually Costs Beyond Unit Price</title>
-<meta name="description" content="Unit price is not what your products cost to land. Total landed cost includes freight, duties, handling, and storage. Here is how to calculate it.">
-<meta name="robots" content="index, follow"><meta name="author" content="Arnie Rose Felicilda">
+<title>Total Landed Cost. What Freight Actually Costs Beyond Unit Price</title>
+<meta name="description" content="Unit price is not what your products cost to land. Total landed cost includes freight, duties, handling, and storage. Here is how to calculate it correctly.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Arnie Rose Felicilda">
 <link rel="canonical" href="https://supplychain.arniefelicilda.com/total-landed-cost-calculator.html">
-<meta property="og:title" content="Total Landed Cost — What Freight Actually Costs Beyond Unit Price">
-<meta property="og:description" content="Unit price is not what your products cost to land. Here is the full calculation.">
-<meta property="og:type" content="article"><meta property="og:url" content="https://supplychain.arniefelicilda.com/total-landed-cost-calculator.html">
+<meta property="og:title" content="Total Landed Cost. What Freight Actually Costs Beyond Unit Price">
+<meta property="og:description" content="Unit price is not what your products cost to land. Total landed cost includes freight, duties, handling, and storage. Here is how to calculate it correctly.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://supplychain.arniefelicilda.com/total-landed-cost-calculator.html">
 <meta property="og:image" content="https://supplychain.arniefelicilda.com/total-landed-cost.png">
-<meta property="og:image:width" content="1080"><meta property="og:image:height" content="1350">
+<meta property="og:image:width" content="1080"><meta property="og:image:height" content="1620">
+<meta property="og:site_name" content="Arnie Rose - Supply Chain">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>:root{--black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;--gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;--heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;}*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}.nav-logo span{color:var(--orange)}.nav-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none}.post-hero{padding:100px 60px 48px;max-width:780px;margin:0 auto}.post-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;display:flex;align-items:center;gap:10px}.post-eyebrow::before{content:'';display:block;width:20px;height:1.5px;background:var(--orange)}.post-title{font-family:var(--heading);font-size:clamp(32px,5vw,52px);font-weight:400;line-height:1.1;color:var(--black);margin-bottom:20px}.post-meta{font-family:var(--body);font-size:13px;color:var(--gray-text);margin-bottom:32px;display:flex;gap:20px;flex-wrap:wrap}.post-image{width:100%;max-width:780px;margin:0 auto 48px;padding:0 60px}.post-image-placeholder{width:100%;aspect-ratio:1080/1350;max-height:500px;background:var(--gray-light);display:flex;align-items:center;justify-content:center;border:1px solid var(--gray-mid)}.post-image-placeholder span{font-family:var(--body);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-text)}.post-body{max-width:680px;margin:0 auto;padding:0 60px 80px}.post-body p{font-family:var(--body);font-size:17px;line-height:1.85;color:#333;margin-bottom:22px}.post-body p:first-child{font-size:19px;color:var(--black)}.post-body h2{font-family:var(--heading);font-size:clamp(22px,3vw,30px);font-weight:400;color:var(--black);margin:40px 0 16px;line-height:1.2}.post-body h3{font-family:var(--body);font-size:18px;font-weight:600;color:var(--black);margin:32px 0 12px}.post-body ul{margin:0 0 22px 20px}.post-body ul li{font-family:var(--body);font-size:17px;line-height:1.8;color:#333;margin-bottom:8px}.post-body strong{font-weight:600;color:var(--black)}.post-divider{width:32px;height:2px;background:var(--orange);margin:40px 0}.highlight-box{background:var(--gray-light);border-left:3px solid var(--orange);padding:24px 28px;margin:32px 0}.highlight-box p{font-family:var(--body);font-size:16px;line-height:1.7;color:var(--black);margin:0}.internal-link{color:var(--orange);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(232,77,28,0.3)}.cta-section{background:var(--black);padding:48px;margin:48px 0 0}.cta-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}.cta-heading{font-family:var(--heading);font-size:clamp(22px,3vw,32px);font-weight:400;color:var(--white);margin-bottom:10px}.cta-sub{font-family:var(--body);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.7}.kit-form{display:flex;gap:0;flex-wrap:wrap}.kit-form input{flex:1;min-width:220px;padding:14px 16px;font-family:var(--body);font-size:14px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:var(--white);outline:none}.kit-form input::placeholder{color:rgba(255,255,255,0.35)}.kit-form button{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap}.share-bar{padding:32px 60px;border-top:1px solid var(--gray-mid);display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:780px;margin:0 auto}.share-label{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-text)}.share-btn{font-family:var(--body);font-size:12px;font-weight:500;padding:8px 18px;text-decoration:none}.btn-pinterest{background:#E60023;color:var(--white)}.btn-facebook{background:#1877F2;color:var(--white)}.related{padding:48px 60px;background:var(--gray-light);border-top:1px solid var(--gray-mid)}.related-inner{max-width:780px;margin:0 auto}.related-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:24px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-mid)}.related-card{background:var(--white);padding:24px 20px;text-decoration:none;color:inherit;display:block}.related-card:hover{background:var(--gray-light)}.related-cat{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}.related-title{font-family:var(--heading);font-size:17px;font-weight:400;color:var(--black);line-height:1.3}footer{background:var(--black);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}.footer-copy{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.25)}.footer-back{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none}@media(max-width:768px){nav{padding:0 20px}.post-hero{padding:80px 20px 32px}.post-image{padding:0 20px}.post-body{padding:0 20px 60px}.cta-section{padding:32px 20px}.share-bar{padding:24px 20px}.related{padding:40px 20px}.related-grid{grid-template-columns:1fr}footer{padding:32px 20px}}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Total Landed Cost. What Freight Actually Costs Beyond Unit Price","description":"Unit price is not what your products cost to land. Total landed cost includes freight, duties, handling, and storage. Here is how to calculate it correctly.","image":"https://supplychain.arniefelicilda.com/total-landed-cost.png","author":{"@type":"Person","name":"Arnie Rose Felicilda"},"publisher":{"@type":"Organization","name":"Keystone Books"},"datePublished":"2026-05-15","url":"https://supplychain.arniefelicilda.com/total-landed-cost-calculator.html"}</script>
+<style>
+:root{--black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;--gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;--heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}
+.nav-logo span{color:var(--orange)}
+.nav-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--black)}
+.post-hero{padding:100px 60px 48px;max-width:780px;margin:0 auto}
+.post-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.post-eyebrow::before{content:'';display:block;width:20px;height:1.5px;background:var(--orange)}
+.post-title{font-family:var(--heading);font-size:clamp(32px,5vw,52px);font-weight:400;line-height:1.1;color:var(--black);margin-bottom:20px}
+.post-meta{font-family:var(--body);font-size:13px;color:var(--gray-text);margin-bottom:32px;display:flex;gap:20px;flex-wrap:wrap}
+.post-image{width:100%;max-width:780px;margin:0 auto 48px;padding:0 60px}
+.post-image img{width:100%;height:auto;display:block}
+.post-body{max-width:680px;margin:0 auto;padding:0 60px 80px}
+.post-body p{font-family:var(--body);font-size:17px;line-height:1.85;color:#333;margin-bottom:22px}
+.post-body p:first-child{font-size:19px;color:var(--black);font-weight:400}
+.post-body h2{font-family:var(--heading);font-size:clamp(22px,3vw,30px);font-weight:400;color:var(--black);margin:40px 0 16px;line-height:1.2}
+.post-body h3{font-family:var(--body);font-size:18px;font-weight:600;color:var(--black);margin:32px 0 12px}
+.post-body ul{margin:0 0 22px 20px}
+.post-body ul li{font-family:var(--body);font-size:17px;line-height:1.8;color:#333;margin-bottom:8px}
+.post-body strong{font-weight:600;color:var(--black)}
+.post-divider{width:32px;height:2px;background:var(--orange);margin:40px 0}
+.highlight-box{background:var(--gray-light);border-left:3px solid var(--orange);padding:24px 28px;margin:32px 0}
+.highlight-box p{font-family:var(--body);font-size:16px;line-height:1.7;color:var(--black);margin:0}
+.metric-card{background:var(--white);border:1px solid var(--gray-mid);padding:28px 24px;margin:24px 0;border-top:3px solid var(--orange)}
+.metric-num{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.metric-name{font-family:var(--heading);font-size:22px;font-weight:400;color:var(--black);margin-bottom:10px}
+.metric-desc{font-family:var(--body);font-size:15px;line-height:1.7;color:#444;margin-bottom:12px}
+.metric-formula{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black);background:var(--gray-light);padding:10px 14px;border-left:2px solid var(--orange)}
+.abc-table{width:100%;border-collapse:collapse;margin:32px 0}
+.abc-table th{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);background:var(--black);padding:12px 16px;text-align:left}
+.abc-table td{font-family:var(--body);font-size:15px;color:#333;padding:14px 16px;border-bottom:1px solid var(--gray-mid)}
+.abc-table tr:nth-child(even) td{background:var(--gray-light)}
+.abc-a{color:var(--orange);font-weight:600}
+.cost-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--gray-mid)}
+.cost-row:first-child{border-top:1px solid var(--gray-mid)}
+.cost-label{font-family:var(--body);font-size:16px;font-weight:500;color:var(--black)}
+.cost-value{font-family:var(--body);font-size:16px;font-weight:600;color:var(--orange)}
+.comparison-table{width:100%;border-collapse:collapse;margin:32px 0}
+.comparison-table th{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);background:var(--black);padding:12px 16px;text-align:left}
+.comparison-table td{font-family:var(--body);font-size:15px;color:#333;padding:14px 16px;border-bottom:1px solid var(--gray-mid)}
+.comparison-table tr:nth-child(even) td{background:var(--gray-light)}
+.winner{color:var(--orange);font-weight:600}
+.risk-card{border:1px solid var(--gray-mid);border-top:3px solid var(--orange);padding:28px 24px;margin:24px 0}
+.risk-num{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.risk-name{font-family:var(--heading);font-size:22px;font-weight:400;color:var(--black);margin-bottom:10px}
+.risk-desc{font-family:var(--body);font-size:15px;line-height:1.7;color:#444;margin-bottom:10px}
+.risk-signal{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black);background:var(--gray-light);padding:10px 14px;border-left:2px solid var(--orange)}
+.internal-link{color:var(--orange);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(232,77,28,0.3)}
+.internal-link:hover{border-color:var(--orange)}
+.kit-links{background:var(--gray-light);padding:28px;margin:40px 0;border-left:3px solid var(--orange)}
+.kit-links p{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-text);margin-bottom:14px}
+.kit-links ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.kit-links ul li a{font-family:var(--body);font-size:15px;color:var(--orange);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(232,77,28,0.3)}
+.kit-main-link{display:block;margin-top:14px;font-family:var(--body);font-size:13px;color:var(--gray-text);text-decoration:none}
+.kit-main-link:hover{color:var(--black)}
+.cta-section{background:var(--black);padding:48px;margin:48px 0 0}
+.cta-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.cta-heading{font-family:var(--heading);font-size:clamp(22px,3vw,32px);font-weight:400;color:var(--white);margin-bottom:10px}
+.cta-sub{font-family:var(--body);font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.7}
+.kit-form{display:flex;gap:0;flex-wrap:wrap}
+.kit-form input{flex:1;min-width:220px;padding:14px 16px;font-family:var(--body);font-size:14px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:var(--white);outline:none}
+.kit-form input::placeholder{color:rgba(255,255,255,0.35)}
+.kit-form button{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap}
+.kit-form button:hover{background:#c43d12}
+.share-bar{padding:32px 60px;border-top:1px solid var(--gray-mid);display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:780px;margin:0 auto}
+.share-label{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-text)}
+.share-btn{font-family:var(--body);font-size:12px;font-weight:500;padding:8px 18px;text-decoration:none;transition:all 0.2s}
+.btn-pinterest{background:#E60023;color:var(--white)}
+.btn-pinterest:hover{background:#ad081b}
+.related{padding:48px 60px;background:var(--gray-light);border-top:1px solid var(--gray-mid)}
+.related-inner{max-width:780px;margin:0 auto}
+.related-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:24px}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-mid)}
+.related-card{background:var(--white);padding:24px 20px;text-decoration:none;color:inherit;display:block;transition:background 0.2s}
+.related-card:hover{background:var(--gray-light)}
+.related-cat{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.related-title{font-family:var(--heading);font-size:17px;font-weight:400;color:var(--black);line-height:1.3}
+footer{background:var(--black);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-copy{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.25)}
+.footer-back{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
+.footer-back:hover{color:var(--white)}
+@media(max-width:768px){nav{padding:0 20px}.post-hero{padding:80px 20px 32px}.post-image{padding:0 20px}.post-body{padding:0 20px 60px}.cta-section{padding:32px 20px}.share-bar{padding:24px 20px}.related{padding:40px 20px}.related-grid{grid-template-columns:1fr}footer{padding:32px 20px}.kit-form{flex-direction:column}}
+</style>
 </head>
 <body>
 <nav><a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a><a href="/" class="nav-back">← Back to Home</a></nav>
 <article>
 <div class="post-hero">
   <p class="post-eyebrow">Supply Chain Strategy</p>
-  <h1 class="post-title">Total Landed Cost — What Freight Actually Costs Beyond Unit Price</h1>
-  <div class="post-meta"><span>By Arnie Rose Felicilda</span><span>Supply Chain Management</span><span>7 min read</span></div>
+  <h1 class="post-title">Total Landed Cost. What Freight Actually Costs Beyond Unit Price</h1>
+  <div class="post-meta"><span>By Arnie Rose Felicilda</span><span>Supply Chain Management</span><span>8 min read</span></div>
 </div>
-<div class="post-image"><img src="total-landed-cost.png" alt="Total Landed Cost — What Freight Actually Costs" style="width:100%;height:auto;display:block;"></div>
+<div class="post-image"><img src="total-landed-cost.png" alt="total landed cost. what freight actually costs beyond unit price" loading="lazy"></div>
 <div class="post-body">
 <p>Total landed cost is the complete cost of getting a product from your supplier to your warehouse, ready for sale. It is not the unit price. It is not the unit price plus shipping. It is every cost incurred between the moment your supplier ships the product and the moment it sits in your inventory, accounted and ready.</p>
-<p>Most operations managers compare suppliers on unit price. The ones who make consistently better sourcing decisions compare on total landed cost. Those two numbers are rarely the same — and the gap between them can make a cheaper supplier more expensive than a pricier one.</p>
+
+<p>Most operations managers compare suppliers on unit price. The ones who make consistently better sourcing decisions compare on total landed cost. Those two numbers are rarely the same. The gap between them can make a cheaper supplier more expensive than a pricier one.</p>
+
 <div class="post-divider"></div>
+
 <h2>What Total Landed Cost Includes</h2>
+
 <p>Total landed cost has seven components. Most managers track two or three. The rest are scattered across different departments and never get pulled together into a single per-unit number.</p>
+
 <h3>1. Unit Purchase Price</h3>
-<p>The FOB or EXW price from your supplier. This is the starting point — not the final number.</p>
+<p>The FOB or EXW price from your supplier. This is the starting point, not the final number.</p>
+
 <h3>2. International Freight</h3>
-<p>Ocean, air, or road freight cost from origin to destination port or warehouse. This varies significantly by mode, volume, and market conditions. In volatile freight markets, this component alone can shift your landed cost by 15–25%.</p>
+<p>Ocean, air, or road freight cost from origin to destination port or warehouse. This varies significantly by mode, volume, and market conditions. In volatile freight markets, this component alone can shift your landed cost by 15 to 25 percent.</p>
+
 <h3>3. Customs Duties and Tariffs</h3>
-<p>Duties are calculated as a percentage of the declared value of goods. They vary by product category (HS code), country of origin, and trade agreements. If you are not tracking duties by SKU, you are missing a cost that can range from 0% to 25% of unit value depending on the product.</p>
+<p>Duties are calculated as a percentage of the declared value of goods. They vary by product category, country of origin, and trade agreements. If you are not tracking duties by SKU, you are missing a cost that can range from 0 to 25 percent of unit value depending on the product.</p>
+
 <h3>4. Customs Brokerage and Documentation</h3>
-<p>The fees paid to a customs broker for clearance, plus the cost of documentation — certificates of origin, commercial invoices, packing lists, and compliance documentation. Typically $150–$400 per shipment, allocated across units in the order.</p>
+<p>The fees paid to a customs broker for clearance, plus documentation costs. Typically $150 to $400 per shipment, allocated across units in the order.</p>
+
 <h3>5. Port Handling and Terminal Fees</h3>
-<p>Fees charged at the destination port for unloading, terminal handling, and container release. These are often overlooked in landed cost calculations because they appear on the freight forwarder invoice rather than the supplier invoice.</p>
+<p>Fees charged at the destination port for unloading, terminal handling, and container release. These often appear on the freight forwarder invoice rather than the supplier invoice, which is why they get missed.</p>
+
 <h3>6. Inland Freight and Last-Mile Delivery</h3>
-<p>The cost of moving product from the port or border to your warehouse. For domestic moves, this is relatively predictable. For cross-border moves, fuel surcharges and driver availability can create significant variance.</p>
+<p>The cost of moving product from the port or border to your warehouse. Fuel surcharges and driver availability can create significant variance on cross-border moves.</p>
+
 <h3>7. Inspection and Quality Control</h3>
-<p>Pre-shipment inspection costs, laboratory testing fees, and any remediation costs for non-conforming goods. These are particularly relevant for manufactured goods sourced from overseas suppliers.</p>
-<div class="highlight-box">
-  <p><strong>The real number:</strong> On a product with a $10 unit price sourced from overseas, total landed cost commonly runs $13–$16 per unit once all seven components are included. That is a 30–60% markup on purchase price before a single item reaches your shelf.</p>
-</div>
+<p>Pre-shipment inspection costs and laboratory testing fees. Particularly relevant for manufactured goods sourced from overseas suppliers.</p>
+
+<div class="highlight-box"><p><strong>The real number:</strong> On a product with a $10 unit price sourced from overseas, total landed cost commonly runs $13 to $16 per unit once all seven components are included. That is a 30 to 60 percent markup on purchase price before a single item reaches your shelf.</p></div>
+
 <h2>How to Calculate Total Landed Cost Per Unit</h2>
+
 <p>The formula is straightforward once you have the data:</p>
-<p><strong>Total Landed Cost = (Purchase Price + All Freight Costs + Duties + Brokerage + Handling + Inspection) ÷ Total Units in Shipment</strong></p>
-<p>The difficulty is gathering the data consistently. Most of these costs come from different invoices, different departments, and different timing. The freight invoice arrives weeks after the purchase order. The duty bill arrives after customs clearance. The brokerage fee is buried in the freight forwarder's statement.</p>
-<p>The solution is a landed cost worksheet — a single document that captures all seven components for every shipment. Use our <a href="landed-cost-calculator.html" class="internal-link">free Total Landed Cost Calculator</a> to run this calculation automatically for any shipment.</p>
+
+<p><strong>Total Landed Cost = (Purchase Price + All Freight Costs + Duties + Brokerage + Handling + Inspection) divided by Total Units in Shipment</strong></p>
+
+<p>The difficulty is gathering the data consistently. The freight invoice arrives weeks after the purchase order. The duty bill arrives after customs clearance. The brokerage fee is buried in the freight forwarder statement.</p>
+
+<p>A landed cost worksheet that captures all seven components for every shipment solves this. Use the <a href="landed-cost-calculator.html" class="internal-link">free Total Landed Cost Calculator</a> to run this calculation automatically for any shipment.</p>
+
 <h2>Why Total Landed Cost Changes Supplier Selection</h2>
-<p>Supplier A offers a unit price of $8.00 with 45-day lead time from overseas. Supplier B offers $9.50 with 10-day lead time domestically. On purchase price alone, Supplier A wins by $1.50 per unit.</p>
-<p>But Supplier A's landed cost — once freight, duties, and capital cost of the longer lead time are added — comes to $11.20 per unit. Supplier B's landed cost is $10.80. The cheaper supplier is actually $0.40 more expensive per unit on a true cost basis.</p>
-<p>This calculation changes the supplier decision entirely. And it only becomes visible when you calculate total landed cost — not unit price.</p>
-<p>For a complete framework on evaluating supplier total cost, read <a href="why-cheapest-supplier-most-expensive.html" class="internal-link">Why the Cheapest Supplier Is the Most Expensive</a>.</p>
+
+<p>Supplier A offers a unit price of $8.00 with a 45-day lead time from overseas. Supplier B offers $9.50 with a 10-day lead time domestically. On purchase price alone, Supplier A wins by $1.50 per unit.</p>
+
+<p>But Supplier A's landed cost, once freight, duties, and capital cost of the longer lead time are added, comes to $11.20 per unit. Supplier B's landed cost is $10.80. The cheaper supplier is actually $0.40 more expensive per unit on a true cost basis.</p>
+
+<p>That calculation changes the supplier decision entirely. It only becomes visible when you calculate total landed cost instead of unit price. For a complete framework on evaluating supplier total cost, read <a href="why-cheapest-supplier-most-expensive.html" class="internal-link">Why the Cheapest Supplier Is the Most Expensive</a>.</p>
+
 <h2>How Often to Calculate Landed Cost</h2>
-<p>Calculate total landed cost for every new supplier before you commit to them. Recalculate for existing suppliers annually, and any time freight rates or duty classifications change significantly. Freight rates in particular can shift 20–40% in a quarter during volatile periods — a landed cost calculation from 18 months ago may be significantly incorrect today.</p>
-<div class="post-divider"></div>
+
+<p>Calculate total landed cost for every new supplier before you commit to them. Recalculate for existing suppliers annually, and any time freight rates or duty classifications change significantly. Freight rates can shift 20 to 40 percent in a quarter during volatile periods. A landed cost calculation from 18 months ago may be significantly wrong today.</p>
+
 <p>Unit price is the starting point. Landed cost is the decision point. Build the habit of calculating all seven components before any sourcing decision, and you will make better supplier choices, more accurate margin calculations, and fewer surprises at the end of the quarter.</p>
+<div class="kit-links">
+  <p>More Supply Chain Reads</p>
+  <ul>
+    <li><a href="https://arfelicilda.kit.com/posts/you-don-t-know-your-true-inventory-cost-and-it-s-draining-your-cash">You Don't Know Your True Inventory Cost (And It's Draining Your Cash)</a></li>
+    <li><a href="https://arfelicilda.kit.com/posts/why-choosing-the-cheapest-supplier-is-the-most-expensive-decision-you-ll-make">Why the Cheapest Supplier Is the Most Expensive Decision</a></li>
+  </ul>
+  <a href="https://arfelicilda.kit.com" class="kit-main-link">Read more supply chain updates at arfelicilda.kit.com →</a>
+</div>
 <div class="cta-section">
   <p class="cta-label">Free Supply Chain Tools</p>
-  <h2 class="cta-heading">Get the free Total Landed Cost Calculator.</h2>
-  <p class="cta-sub">Enter your shipment details. Get your true cost per unit in under 5 minutes.</p>
+  <h2 class="cta-heading">Get free supply chain tools. calculators, scorecards, and frameworks.</h2>
+  <p class="cta-sub">Built for supply chain managers running inventory, suppliers, and logistics without a manual.</p>
   <form action="https://app.kit.com/forms/9445646/subscriptions" method="post" class="kit-form">
     <input name="email_address" type="email" placeholder="Your email address" required>
     <button type="submit">Send Me the Tools</button>
@@ -73,11 +191,9 @@
 </div>
 </article>
 <div class="share-bar">
-  <span class="share-label">Share</span>
-  <a href="https://pinterest.com/pin/create/button/?url=https://supplychain.arniefelicilda.com/total-landed-cost-calculator.html&media=https://supplychain.arniefelicilda.com/total-landed-cost.png&description=Total%20Landed%20Cost%20%E2%80%94%20What%20freight%20actually%20costs%20beyond%20unit%20price.%20supplychain.arniefelicilda.com" target="_blank" rel="noopener" class="share-btn btn-pinterest">Save to Pinterest</a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://supplychain.arniefelicilda.com/total-landed-cost-calculator.html" target="_blank" rel="noopener" class="share-btn btn-facebook">Share on Facebook</a>
+  <span class="share-label">Save to Pinterest</span>
+  <a href="https://ph.pinterest.com/pin/1131951687614216762/" target="_blank" rel="noopener" class="share-btn btn-pinterest">Pin This</a>
 </div>
-<div class="related"><div class="related-inner"><p class="related-label">Read Next</p><div class="related-grid"><a href="why-cheapest-supplier-most-expensive.html" class="related-card"><p class="related-cat">Supplier Management</p><p class="related-title">Why the Cheapest Supplier Is the Most Expensive</p></a><a href="supply-chain-risk-assessment.html" class="related-card"><p class="related-cat">Supply Chain Strategy</p><p class="related-title">Supply Chain Risk Assessment — 5 Hidden Risks</p></a><a href="you-dont-know-your-true-inventory-cost.html" class="related-card"><p class="related-cat">Inventory Management</p><p class="related-title">You Don't Know Your True Inventory Cost</p></a></div></div></div>
+<div class="related"><div class="related-inner"><p class="related-label">Read Next</p><div class="related-grid"><a href="why-cheapest-supplier-most-expensive.html" class="related-card"><p class="related-cat">Supplier Management</p><p class="related-title">Why the Cheapest Supplier Is the Most Expensive</p></a><a href="supply-chain-risk-assessment.html" class="related-card"><p class="related-cat">Supply Chain Strategy</p><p class="related-title">Supply Chain Risk Assessment. 5 Hidden Risks</p></a><a href="you-dont-know-your-true-inventory-cost.html" class="related-card"><p class="related-cat">Inventory Management</p><p class="related-title">You Don't Know Your True Inventory Cost</p></a></div></div></div>
 <footer><span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span><a href="/" class="footer-back">supplychain.arniefelicilda.com →</a></footer>
-</body>
-</html>
+</body></html>

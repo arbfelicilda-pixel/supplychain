@@ -4,60 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>5 Inventory Metrics Every Ops Manager Must Track</title>
-<meta name="description" content="The 5 inventory metrics every operations manager must track to reduce waste, prevent stockouts, and protect cash flow. Free calculator included.">
+<meta name="description" content="5 inventory metrics every ops manager must track to reduce waste, prevent stockouts, and protect cash flow. Formulas and free calculator included.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Arnie Rose Felicilda">
 <link rel="canonical" href="https://supplychain.arniefelicilda.com/5-inventory-metrics-ops-managers.html">
 <meta property="og:title" content="5 Inventory Metrics Every Ops Manager Must Track">
-<meta property="og:description" content="The 5 inventory metrics every operations manager must track to reduce waste, prevent stockouts, and protect cash flow.">
+<meta property="og:description" content="5 inventory metrics every ops manager must track to reduce waste, prevent stockouts, and protect cash flow. Formulas and free calculator included.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://supplychain.arniefelicilda.com/5-inventory-metrics-ops-managers.html">
 <meta property="og:image" content="https://supplychain.arniefelicilda.com/5-inventory-metrics.png">
 <meta property="og:image:width" content="1080">
-<meta property="og:image:height" content="1350">
-<meta property="og:site_name" content="Arnie Rose — Supply Chain">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="5 Inventory Metrics Every Ops Manager Must Track">
-<meta name="twitter:description" content="The 5 inventory metrics every operations manager must track to reduce waste, prevent stockouts, and protect cash flow.">
-<meta name="twitter:image" content="https://supplychain.arniefelicilda.com/5-inventory-metrics.png">
+<meta property="og:image:height" content="1620">
+<meta property="og:site_name" content="Arnie Rose - Supply Chain">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "5 Inventory Metrics Every Ops Manager Must Track",
-  "description": "The 5 inventory metrics every operations manager must track to reduce waste, prevent stockouts, and protect cash flow.",
-  "image": "https://supplychain.arniefelicilda.com/5-inventory-metrics.png",
-  "author": {"@type": "Person", "name": "Arnie Rose Felicilda", "url": "https://arniefelicilda.com"},
-  "publisher": {"@type": "Organization", "name": "Keystone Books"},
-  "datePublished": "2026-05-15",
-  "url": "https://supplychain.arniefelicilda.com/5-inventory-metrics-ops-managers.html",
-  "keywords": "inventory metrics, operations manager, inventory management, supply chain KPIs"
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"5 Inventory Metrics Every Ops Manager Must Track","description":"5 inventory metrics every ops manager must track to reduce waste, prevent stockouts, and protect cash flow. Formulas and free calculator included.","image":"https://supplychain.arniefelicilda.com/5-inventory-metrics.png","author":{"@type":"Person","name":"Arnie Rose Felicilda","url":"https://arniefelicilda.com"},"publisher":{"@type":"Organization","name":"Keystone Books"},"datePublished":"2026-05-15","url":"https://supplychain.arniefelicilda.com/5-inventory-metrics-ops-managers.html","keywords":"inventory metrics, ops manager, inventory management, supply chain KPIs"}</script>
 <style>
-:root{
-  --black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;
-  --gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;
-  --heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;
-}
+:root{--black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;--gray-mid:#E5E5E5;--gray-text:#666666;--orange:#E84D1C;--heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}
 .nav-logo span{color:var(--orange)}
-.nav-back{font-family:var(--body);font-size:12px;font-weight:400;color:var(--gray-text);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s}
+.nav-back{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none;transition:color 0.2s}
 .nav-back:hover{color:var(--black)}
 .post-hero{padding:100px 60px 48px;max-width:780px;margin:0 auto}
 .post-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .post-eyebrow::before{content:'';display:block;width:20px;height:1.5px;background:var(--orange)}
 .post-title{font-family:var(--heading);font-size:clamp(32px,5vw,52px);font-weight:400;line-height:1.1;color:var(--black);margin-bottom:20px}
 .post-meta{font-family:var(--body);font-size:13px;color:var(--gray-text);margin-bottom:32px;display:flex;gap:20px;flex-wrap:wrap}
-.post-image{width:100%;max-width:780px;margin:0 auto 48px;display:block;padding:0 60px}
-.post-image img{width:100%;height:auto;display:block;background:var(--gray-light)}
-.post-image-placeholder{width:100%;aspect-ratio:1080/1350;max-height:500px;background:var(--gray-light);display:flex;align-items:center;justify-content:center;border:1px solid var(--gray-mid)}
-.post-image-placeholder span{font-family:var(--body);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-text)}
+.post-image{width:100%;max-width:780px;margin:0 auto 48px;padding:0 60px}
+.post-image img{width:100%;height:auto;display:block}
 .post-body{max-width:680px;margin:0 auto;padding:0 60px 80px}
 .post-body p{font-family:var(--body);font-size:17px;line-height:1.85;color:#333;margin-bottom:22px}
 .post-body p:first-child{font-size:19px;color:var(--black);font-weight:400}
@@ -74,8 +51,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);bord
 .metric-name{font-family:var(--heading);font-size:22px;font-weight:400;color:var(--black);margin-bottom:10px}
 .metric-desc{font-family:var(--body);font-size:15px;line-height:1.7;color:#444;margin-bottom:12px}
 .metric-formula{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black);background:var(--gray-light);padding:10px 14px;border-left:2px solid var(--orange)}
-.internal-link{color:var(--orange);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(232,77,28,0.3);transition:border-color 0.2s}
+.abc-table{width:100%;border-collapse:collapse;margin:32px 0}
+.abc-table th{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);background:var(--black);padding:12px 16px;text-align:left}
+.abc-table td{font-family:var(--body);font-size:15px;color:#333;padding:14px 16px;border-bottom:1px solid var(--gray-mid)}
+.abc-table tr:nth-child(even) td{background:var(--gray-light)}
+.abc-a{color:var(--orange);font-weight:600}
+.cost-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--gray-mid)}
+.cost-row:first-child{border-top:1px solid var(--gray-mid)}
+.cost-label{font-family:var(--body);font-size:16px;font-weight:500;color:var(--black)}
+.cost-value{font-family:var(--body);font-size:16px;font-weight:600;color:var(--orange)}
+.comparison-table{width:100%;border-collapse:collapse;margin:32px 0}
+.comparison-table th{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);background:var(--black);padding:12px 16px;text-align:left}
+.comparison-table td{font-family:var(--body);font-size:15px;color:#333;padding:14px 16px;border-bottom:1px solid var(--gray-mid)}
+.comparison-table tr:nth-child(even) td{background:var(--gray-light)}
+.winner{color:var(--orange);font-weight:600}
+.risk-card{border:1px solid var(--gray-mid);border-top:3px solid var(--orange);padding:28px 24px;margin:24px 0}
+.risk-num{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.risk-name{font-family:var(--heading);font-size:22px;font-weight:400;color:var(--black);margin-bottom:10px}
+.risk-desc{font-family:var(--body);font-size:15px;line-height:1.7;color:#444;margin-bottom:10px}
+.risk-signal{font-family:var(--body);font-size:13px;font-weight:500;color:var(--black);background:var(--gray-light);padding:10px 14px;border-left:2px solid var(--orange)}
+.internal-link{color:var(--orange);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(232,77,28,0.3)}
 .internal-link:hover{border-color:var(--orange)}
+.kit-links{background:var(--gray-light);padding:28px;margin:40px 0;border-left:3px solid var(--orange)}
+.kit-links p{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-text);margin-bottom:14px}
+.kit-links ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.kit-links ul li a{font-family:var(--body);font-size:15px;color:var(--orange);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(232,77,28,0.3)}
+.kit-main-link{display:block;margin-top:14px;font-family:var(--body);font-size:13px;color:var(--gray-text);text-decoration:none}
+.kit-main-link:hover{color:var(--black)}
 .cta-section{background:var(--black);padding:48px;margin:48px 0 0}
 .cta-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
 .cta-heading{font-family:var(--heading);font-size:clamp(22px,3vw,32px);font-weight:400;color:var(--white);margin-bottom:10px}
@@ -83,15 +85,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);bord
 .kit-form{display:flex;gap:0;flex-wrap:wrap}
 .kit-form input{flex:1;min-width:220px;padding:14px 16px;font-family:var(--body);font-size:14px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:var(--white);outline:none}
 .kit-form input::placeholder{color:rgba(255,255,255,0.35)}
-.kit-form button{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap;transition:background 0.2s}
+.kit-form button{background:var(--orange);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap}
 .kit-form button:hover{background:#c43d12}
 .share-bar{padding:32px 60px;border-top:1px solid var(--gray-mid);display:flex;align-items:center;gap:16px;flex-wrap:wrap;max-width:780px;margin:0 auto}
 .share-label{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-text)}
 .share-btn{font-family:var(--body);font-size:12px;font-weight:500;padding:8px 18px;text-decoration:none;transition:all 0.2s}
 .btn-pinterest{background:#E60023;color:var(--white)}
 .btn-pinterest:hover{background:#ad081b}
-.btn-facebook{background:#1877F2;color:var(--white)}
-.btn-facebook:hover{background:#0f5bb5}
 .related{padding:48px 60px;background:var(--gray-light);border-top:1px solid var(--gray-mid)}
 .related-inner{max-width:780px;margin:0 auto}
 .related-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:24px}
@@ -104,191 +104,133 @@ footer{background:var(--black);padding:40px 60px;display:flex;justify-content:sp
 .footer-copy{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.25)}
 .footer-back{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
 .footer-back:hover{color:var(--white)}
-@media(max-width:768px){
-  nav{padding:0 20px}
-  .post-hero{padding:80px 20px 32px}
-  .post-image{padding:0 20px}
-  .post-body{padding:0 20px 60px}
-  .cta-section{padding:32px 20px}
-  .share-bar{padding:24px 20px}
-  .related{padding:40px 20px}
-  footer{padding:32px 20px}
-  .related-grid{grid-template-columns:1fr}
-  .kit-form{flex-direction:column}
-}
+@media(max-width:768px){nav{padding:0 20px}.post-hero{padding:80px 20px 32px}.post-image{padding:0 20px}.post-body{padding:0 20px 60px}.cta-section{padding:32px 20px}.share-bar{padding:24px 20px}.related{padding:40px 20px}.related-grid{grid-template-columns:1fr}footer{padding:32px 20px}.kit-form{flex-direction:column}}
 </style>
 </head>
 <body>
-
 <nav>
   <a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a>
   <a href="/" class="nav-back">← Back to Home</a>
 </nav>
-
 <article>
-
 <div class="post-hero">
   <p class="post-eyebrow">Inventory Management</p>
   <h1 class="post-title">5 Inventory Metrics Every Ops Manager Must Track</h1>
-  <div class="post-meta">
-    <span>By Arnie Rose Felicilda</span>
-    <span>Supply Chain Management</span>
-    <span>8 min read</span>
-  </div>
+  <div class="post-meta"><span>By Arnie Rose Felicilda</span><span>Supply Chain Management</span><span>8 min read</span></div>
 </div>
-
-<div class="post-image">
-  <img src="5-inventory-metrics.png" alt="5 Inventory Metrics Every Ops Manager Must Track" style="width:100%;height:auto;display:block;">
-</div>
-
+<div class="post-image"><img src="5-inventory-metrics.png" alt="5 inventory metrics every ops manager must track" loading="lazy"></div>
 <div class="post-body">
+<p>Most operations managers track the wrong inventory numbers. They watch purchase price, total units, and reorder dates. They miss the five inventory metrics that connect directly to cash flow, stockout prevention, and supply chain health.</p>
 
-<p>Most operations managers track the wrong inventory numbers. They watch purchase price, total units, and reorder dates — and miss the five inventory metrics that actually tell you whether your supply chain is healthy or quietly bleeding cash.</p>
+<p>Working from those three numbers alone means making decisions on incomplete data. Stockouts happen. Overstock accumulates. Cash flow tightens. None of it shows clearly until it is already a problem.</p>
 
-<p>If you manage inventory without tracking these five numbers, you are making decisions on incomplete data. Stockouts happen. Overstock accumulates. Cash flow tightens. And none of it shows up clearly until it is already a problem.</p>
-
-<p>This post covers the five inventory metrics every ops manager must track, what each one means, and how to calculate them — no MBA required.</p>
+<p>These five metrics give you the full picture. One number tells part of the story. All five together tell you what to fix and where to start.</p>
 
 <div class="post-divider"></div>
 
 <h2>Why Inventory Metrics Matter More Than Inventory Count</h2>
 
-<p>Knowing how many units you have is not inventory management. It is counting. Real inventory management means understanding the health of what you are holding — whether it is moving, whether it is costing you more than it should, and whether you have the right amount at the right time.</p>
+<p>Knowing how many units you have is not inventory management. It is counting.</p>
 
-<p>The five metrics below answer those questions. They work together. One number alone tells you part of the story. All five together give you the full picture.</p>
+<p>Real inventory management means understanding the health of what you are holding. Is it moving? Is it costing more to hold than it earns? Do you have the right amount at the right time? These five inventory metrics answer those questions directly.</p>
 
-<div class="highlight-box">
-  <p><strong>The rule:</strong> If you cannot calculate these five numbers from your current data right now, your inventory system has a gap. Fix the data first. The metrics follow.</p>
-</div>
+<div class="highlight-box"><p><strong>One rule before you start:</strong> If you cannot calculate these five numbers from your current data right now, your inventory system has a gap. Fix the data first. The metrics follow.</p></div>
 
 <h2>The 5 Inventory Metrics Every Ops Manager Must Track</h2>
 
 <div class="metric-card">
-  <p class="metric-num">Metric 01</p>
-  <p class="metric-name">Inventory Turnover Rate</p>
-  <p class="metric-desc">Inventory turnover tells you how many times you sell through and replace your inventory in a given period. A high turnover rate means your stock is moving. A low turnover rate means your cash is sitting on shelves.</p>
-  <p class="metric-desc">Industry averages vary — retail typically targets 4–6 turns per year, while fast-moving consumer goods aim for 12 or higher. If you do not know your number, you do not know if your inventory is performing.</p>
-  <p class="metric-formula">Formula: Cost of Goods Sold ÷ Average Inventory Value</p>
+<p class="metric-num">Metric 01</p>
+<p class="metric-name">Inventory Turnover Rate</p>
+<p class="metric-desc">Inventory turnover tells you how many times you sell through and replace your inventory in a given period. High turnover means stock is moving. Low turnover means cash is sitting on shelves.</p>
+<p class="metric-desc">Retail typically targets 4 to 6 turns per year. Fast-moving consumer goods aim for 12 or higher. If you do not know your number, you cannot tell whether your inventory is performing or bleeding.</p>
+<p class="metric-formula">Formula: Cost of Goods Sold divided by Average Inventory Value</p>
 </div>
 
 <div class="metric-card">
-  <p class="metric-num">Metric 02</p>
-  <p class="metric-name">Days Sales of Inventory (DSI)</p>
-  <p class="metric-desc">DSI tells you how many days it takes to sell your current inventory. It is the clearest measure of how long your cash is locked up in stock. A DSI of 30 means you turn over inventory every month. A DSI of 90 means your money sits for three months before it comes back.</p>
-  <p class="metric-desc">For most small and mid-size operations, a DSI above 60 is a warning sign. Above 90 is a cash flow problem waiting to happen.</p>
-  <p class="metric-formula">Formula: (Average Inventory ÷ COGS) × Number of Days</p>
+<p class="metric-num">Metric 02</p>
+<p class="metric-name">Days Sales of Inventory</p>
+<p class="metric-desc">DSI tells you how many days it takes to sell your current inventory. It is the clearest measure of how long your cash stays locked up in stock. A DSI of 30 means you turn over inventory every month. A DSI of 90 means your money sits for three months before it comes back.</p>
+<p class="metric-desc">For most small and mid-size operations, a DSI above 60 is a warning sign. Above 90 is a cash flow problem that compounds quietly until it becomes critical.</p>
+<p class="metric-formula">Formula: (Average Inventory divided by COGS) multiplied by Number of Days</p>
 </div>
 
 <div class="metric-card">
-  <p class="metric-num">Metric 03</p>
-  <p class="metric-name">Inventory Carrying Cost</p>
-  <p class="metric-desc">This is the one most ops managers do not track — and it is the most expensive blind spot in inventory management. Carrying cost includes storage, insurance, obsolescence, spoilage, and the opportunity cost of capital tied up in stock.</p>
-  <p class="metric-desc">Industry average carrying cost runs between 20–30% of total inventory value per year. On a $100,000 inventory, that is $20,000–$30,000 per year just to hold it. Most managers never see this number because it is spread across multiple line items.</p>
-  <p class="metric-formula">Formula: (Storage + Insurance + Obsolescence + Capital Cost) ÷ Total Inventory Value × 100</p>
+<p class="metric-num">Metric 03</p>
+<p class="metric-name">Inventory Carrying Cost</p>
+<p class="metric-desc">This is the metric most ops managers skip. It is also the most expensive blind spot in inventory management. Carrying cost includes storage, insurance, obsolescence, spoilage, and the opportunity cost of capital tied up in stock.</p>
+<p class="metric-desc">Industry average carrying cost runs between 20 and 30 percent of total inventory value per year. On a $100,000 inventory, that is $20,000 to $30,000 annually just to hold it. Most managers never see this number because it is spread across multiple line items.</p>
+<p class="metric-formula">Formula: (Storage + Insurance + Obsolescence + Capital Cost) divided by Total Inventory Value, multiplied by 100</p>
 </div>
 
 <div class="metric-card">
-  <p class="metric-num">Metric 04</p>
-  <p class="metric-name">Stockout Rate</p>
-  <p class="metric-desc">Your stockout rate measures how often a customer or production line requests an item that is not available. Every stockout has a direct cost — lost sales, emergency procurement, expedited freight, or production downtime. And it has an indirect cost — damaged supplier relationships and eroded customer trust.</p>
-  <p class="metric-desc">Track stockouts by SKU category, not just total count. A single high-velocity SKU running out repeatedly is a bigger problem than ten slow-moving SKUs occasionally going to zero.</p>
-  <p class="metric-formula">Formula: (Number of Stockout Incidents ÷ Total Order Requests) × 100</p>
+<p class="metric-num">Metric 04</p>
+<p class="metric-name">Stockout Rate</p>
+<p class="metric-desc">Stockout rate measures how often a customer or production line requests an item that is not available. Every stockout carries a direct cost: lost sales, emergency procurement, expedited freight, or production downtime.</p>
+<p class="metric-desc">Track stockouts by SKU category, not just total count. A single high-velocity SKU running out repeatedly is a bigger problem than ten slow-moving SKUs occasionally going to zero.</p>
+<p class="metric-formula">Formula: (Stockout Incidents divided by Total Order Requests) multiplied by 100</p>
 </div>
 
 <div class="metric-card">
-  <p class="metric-num">Metric 05</p>
-  <p class="metric-name">Fill Rate</p>
-  <p class="metric-desc">Fill rate is the percentage of orders you fulfill completely from available stock without backorders or delays. It is the positive version of stockout rate — instead of measuring failure, it measures your ability to meet demand on time.</p>
-  <p class="metric-desc">A fill rate of 95% sounds good until you realize that the 5% you are missing might be your top revenue SKUs. Always analyze fill rate by SKU tier, not just overall average.</p>
-  <p class="metric-formula">Formula: (Orders Fulfilled on Time and in Full ÷ Total Orders) × 100</p>
+<p class="metric-num">Metric 05</p>
+<p class="metric-name">Fill Rate</p>
+<p class="metric-desc">Fill rate is the percentage of orders you fulfill completely from available stock without backorders or delays. It is the positive counterpart to stockout rate. Instead of measuring failure, it measures your ability to meet demand on time.</p>
+<p class="metric-desc">A 95 percent fill rate sounds strong until you realize the 5 percent you are missing might be your top revenue SKUs. Always analyze fill rate by SKU tier, not just the overall average.</p>
+<p class="metric-formula">Formula: (Orders Fulfilled On Time and In Full divided by Total Orders) multiplied by 100</p>
 </div>
 
 <div class="post-divider"></div>
 
-<h2>How These 5 Metrics Work Together</h2>
+<h2>How These 5 Inventory Metrics Work Together</h2>
 
 <p>These metrics do not work in isolation. Inventory turnover tells you if stock is moving. DSI tells you how long it sits. Carrying cost tells you what sitting costs. Stockout rate tells you where the gaps are. Fill rate tells you how reliably you close those gaps.</p>
 
-<p>Run all five on a weekly or monthly basis. Build a simple dashboard — even a spreadsheet works. The goal is to see trends over time, not just a snapshot.</p>
+<p>Run all five on a weekly or monthly basis. A simple spreadsheet works. Track trends over time, not just single snapshots. Low turnover combined with high carrying cost means you are overstocked on slow-moving items. High fill rate with a high stockout rate means some SKUs are masking others. Each combination points to a different fix.</p>
 
-<p>If your turnover is low and your carrying cost is high, you are overstocked on slow-moving items. If your fill rate is high but your stockout rate is also high, you have a category problem — some SKUs are masking others. Each combination points to a different fix.</p>
-
-<div class="highlight-box">
-  <p>Use our free <a href="inventory-health-calculator.html" class="internal-link">Inventory Health Calculator</a> to run all five metrics in one place. Enter your numbers and get your score in under five minutes.</p>
-</div>
+<div class="highlight-box"><p>Use the free <a href="inventory-health-calculator.html" class="internal-link">Inventory Health Calculator</a> to run all five metrics at once. Enter your numbers and get your score in under five minutes.</p></div>
 
 <h2>What to Do With the Numbers</h2>
 
-<p>Tracking is not the end goal. Action is. Once you have your five numbers, here is how to use them:</p>
-
+<p>Tracking is not the end goal. Action is. Once you have your five numbers, here is how to read them:</p>
 <ul>
-  <li><strong>Low turnover + high DSI:</strong> Review your reorder quantities. You are ordering too much or too infrequently. Consider SKU rationalization — cut the bottom 20% of your catalog by velocity.</li>
-  <li><strong>High carrying cost:</strong> Audit your storage. Look for obsolete inventory that is occupying space and capital. A <a href="abc-analysis-find-your-money.html" class="internal-link">SKU ABC analysis</a> will show you exactly which items to prioritize.</li>
-  <li><strong>High stockout rate:</strong> Review your reorder points. Most stockouts happen because reorder points were set when demand was lower and never updated.</li>
-  <li><strong>Low fill rate on specific SKUs:</strong> Those SKUs need dedicated safety stock calculation. Do not apply a blanket safety stock rule across all items.</li>
+<li><strong>Low turnover plus high DSI:</strong> You are ordering too much or too infrequently. Review reorder quantities. Consider cutting the bottom 20 percent of your catalog by velocity.</li>
+<li><strong>High carrying cost:</strong> Run an <a href="abc-analysis-find-your-money.html" class="internal-link">ABC analysis on your SKUs</a> to find which items occupy space and capital without justifying it.</li>
+<li><strong>High stockout rate:</strong> Your reorder points are set wrong. Most stockouts happen because reorder triggers were set when demand was lower and never updated.</li>
+<li><strong>Low fill rate on specific SKUs:</strong> Those SKUs need their own safety stock calculation. A blanket safety stock rule applied across all items creates both stockouts and overstock.</li>
 </ul>
 
-<h2>The Metric Most Managers Add Last</h2>
-
-<p>After these five, the next most important metric is <strong>supplier lead time variance</strong> — how much your supplier's actual delivery time deviates from their quoted lead time. High variance means you need more safety stock. Low variance means you can run leaner.</p>
-
-<p>Most managers do not track this because it requires consistent data entry over time. But it is the single metric that most directly determines whether your reorder points are set correctly.</p>
-
-<p>Start tracking it now, even informally. A simple log of quoted vs. actual delivery dates by supplier is enough to start seeing patterns within 60–90 days.</p>
-
-<div class="post-divider"></div>
-
-<p>Inventory management is not about having the most sophisticated system. It is about tracking the right numbers consistently and acting on what they tell you. These five metrics give you that foundation.</p>
-
-<p>Start with turnover and DSI. Add carrying cost in your first week. Track stockout and fill rate from month one. Within 90 days, you will have more clarity on your inventory than most managers achieve in a year.</p>
-
-<!-- KIT FORM CTA -->
+<p>Inventory management is not about the most sophisticated system. It is about tracking the right numbers consistently and acting on what they tell you. Start with turnover and DSI. Add carrying cost in the first week. Track stockout rate and fill rate from month one. Within 90 days, you will have more clarity on your inventory than most managers build in a year.</p>
+<div class="kit-links">
+  <p>More Supply Chain Reads</p>
+  <ul>
+    <li><a href="https://arfelicilda.kit.com/posts/you-don-t-know-your-true-inventory-cost-and-it-s-draining-your-cash">You Don't Know Your True Inventory Cost (And It's Draining Your Cash)</a></li>
+    <li><a href="https://arfelicilda.kit.com/posts/why-choosing-the-cheapest-supplier-is-the-most-expensive-decision-you-ll-make">Why the Cheapest Supplier Is the Most Expensive Decision</a></li>
+  </ul>
+  <a href="https://arfelicilda.kit.com" class="kit-main-link">Read more supply chain updates at arfelicilda.kit.com →</a>
+</div>
 <div class="cta-section">
   <p class="cta-label">Free Supply Chain Tools</p>
-  <h2 class="cta-heading">Get the Inventory Health Calculator — free.</h2>
-  <p class="cta-sub">Enter your numbers. Get your inventory health score in under 5 minutes. No spreadsheet required.</p>
+  <h2 class="cta-heading">Get free supply chain tools. calculators, scorecards, and frameworks.</h2>
+  <p class="cta-sub">Built for supply chain managers running inventory, suppliers, and logistics without a manual.</p>
   <form action="https://app.kit.com/forms/9445646/subscriptions" method="post" class="kit-form">
     <input name="email_address" type="email" placeholder="Your email address" required>
     <button type="submit">Send Me the Tools</button>
   </form>
 </div>
-
-</div><!-- end post-body -->
-
-</article>
-
-<!-- SHARE BAR -->
-<div class="share-bar">
-  <span class="share-label">Share</span>
-  <a href="https://pinterest.com/pin/create/button/?url=https://supplychain.arniefelicilda.com/5-inventory-metrics-ops-managers.html&media=https://supplychain.arniefelicilda.com/5-inventory-metrics.png&description=5%20Inventory%20Metrics%20Every%20Ops%20Manager%20Must%20Track%20%E2%80%94%20Free%20calculator%20inside.%20supplychain.arniefelicilda.com" target="_blank" rel="noopener" class="share-btn btn-pinterest">Save to Pinterest</a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://supplychain.arniefelicilda.com/5-inventory-metrics-ops-managers.html" target="_blank" rel="noopener" class="share-btn btn-facebook">Share on Facebook</a>
 </div>
-
-<!-- RELATED POSTS -->
+</article>
+<div class="share-bar">
+  <span class="share-label">Save to Pinterest</span>
+  <a href="https://ph.pinterest.com/pin/1131951687614712630/" target="_blank" rel="noopener" class="share-btn btn-pinterest">Pin This</a>
+</div>
 <div class="related">
   <div class="related-inner">
     <p class="related-label">Read Next</p>
-    <div class="related-grid">
-      <a href="5-inventory-kpis-that-actually-matter.html" class="related-card">
-        <p class="related-cat">Inventory Management</p>
-        <p class="related-title">5 Inventory KPIs That Actually Matter</p>
-      </a>
-      <a href="your-inventory-is-cash-in-disguise.html" class="related-card">
-        <p class="related-cat">Inventory Management</p>
-        <p class="related-title">Your Inventory Is Cash in Disguise</p>
-      </a>
-      <a href="inventory-carrying-cost.html" class="related-card">
-        <p class="related-cat">Inventory Management</p>
-        <p class="related-title">Inventory Carrying Cost — What It Actually Costs You</p>
-      </a>
-    </div>
+    <div class="related-grid"><a href="5-inventory-kpis-that-actually-matter.html" class="related-card"><p class="related-cat">Inventory Management</p><p class="related-title">5 Inventory KPIs That Actually Matter</p></a><a href="your-inventory-is-cash-in-disguise.html" class="related-card"><p class="related-cat">Inventory Management</p><p class="related-title">Your Inventory Is Cash in Disguise</p></a><a href="inventory-carrying-cost.html" class="related-card"><p class="related-cat">Inventory Management</p><p class="related-title">Inventory Carrying Cost. What It Actually Costs</p></a></div>
   </div>
 </div>
-
 <footer>
   <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
   <a href="/" class="footer-back">supplychain.arniefelicilda.com →</a>
 </footer>
-
 </body>
 </html>
