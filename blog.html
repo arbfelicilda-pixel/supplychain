@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supply Chain Blog — All Posts — Arnie Rose Felicilda</title>
+<meta name="description" content="All supply chain blog posts. Inventory management, supplier strategy, freight, procurement, and operations. Practical reads for managers who learned on the job.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Arnie Rose Felicilda">
+<link rel="canonical" href="https://supplychain.arniefelicilda.com/blog.html">
+<meta property="og:title" content="Supply Chain Blog — All Posts">
+<meta property="og:description" content="All supply chain blog posts. Inventory management, supplier strategy, freight, procurement, and operations.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://supplychain.arniefelicilda.com/blog.html">
+<meta property="og:site_name" content="Arnie Rose — Supply Chain">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #111111;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-mid: #E5E5E5;
+  --gray-text: #666666;
+  --orange: #E84D1C;
+  --orange-dark: #C43D12;
+  --heading: 'DM Serif Display', Georgia, serif;
+  --body: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--body); background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--white); border-bottom: 1px solid var(--gray-mid);
+  padding: 0 60px; height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); text-decoration: none; }
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { font-family: var(--body); font-size: 13px; font-weight: 400; color: var(--gray-text); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-cta { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--white) !important; background: var(--black); padding: 9px 20px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--orange) !important; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--black); }
+.nav-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--gray-mid); padding: 24px 32px; z-index: 99; flex-direction: column; gap: 20px; }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { font-family: var(--body); font-size: 15px; color: var(--black); text-decoration: none; font-weight: 400; }
+
+/* PAGE HEADER */
+.page-header {
+  padding: 100px 60px 56px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--gray-mid);
+}
+.page-eyebrow {
+  font-family: var(--body); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange);
+  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.page-eyebrow::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--orange); }
+.page-title {
+  font-family: var(--heading); font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400; line-height: 1.1; color: var(--black); margin-bottom: 16px;
+}
+.page-sub {
+  font-family: var(--body); font-size: 17px; font-weight: 300;
+  color: var(--gray-text); line-height: 1.6; max-width: 560px;
+}
+
+/* FILTER TABS */
+.filter-bar {
+  max-width: 1100px; margin: 0 auto;
+  padding: 32px 60px 0;
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: var(--body); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.04em; color: var(--gray-text);
+  background: none; border: 1px solid var(--gray-mid);
+  padding: 8px 18px; cursor: pointer; transition: all 0.2s;
+}
+.filter-btn:hover { border-color: var(--black); color: var(--black); }
+.filter-btn.active { background: var(--black); color: var(--white); border-color: var(--black); }
+
+/* BLOG GRID */
+.blog-section {
+  max-width: 1100px; margin: 0 auto;
+  padding: 40px 60px 100px;
+}
+.batch-label {
+  font-family: var(--body); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-text);
+  margin-bottom: 24px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--gray-mid);
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--gray-mid);
+  margin-bottom: 48px;
+}
+.blog-card {
+  background: var(--white); text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  transition: background 0.2s;
+  border-top: 2px solid transparent;
+}
+.blog-card:hover { background: var(--gray-light); border-top-color: var(--orange); }
+.blog-card-body { padding: 28px 24px 32px; display: flex; flex-direction: column; flex: 1; }
+.blog-cat {
+  font-family: var(--body); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange);
+  margin-bottom: 10px;
+}
+.blog-title {
+  font-family: var(--heading); font-size: 19px; font-weight: 400;
+  color: var(--black); line-height: 1.3; margin-bottom: 10px; flex: 1;
+}
+.blog-excerpt {
+  font-family: var(--body); font-size: 13px; font-weight: 300;
+  color: var(--gray-text); line-height: 1.65; margin-bottom: 16px;
+}
+.blog-arrow {
+  font-family: var(--body); font-size: 12px; font-weight: 600;
+  color: var(--orange); letter-spacing: 0.04em;
+}
+
+/* EMAIL SECTION */
+.email-section {
+  background: var(--black);
+  padding: 80px 60px;
+  text-align: center;
+}
+.email-eyebrow {
+  font-family: var(--body); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-bottom: 20px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+.email-eyebrow::before, .email-eyebrow::after { content: ''; display: block; width: 24px; height: 1px; background: rgba(255,255,255,0.2); }
+.email-heading {
+  font-family: var(--heading); font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400; color: var(--white); margin-bottom: 12px; line-height: 1.2;
+}
+.email-sub {
+  font-family: var(--body); font-size: 16px; font-weight: 300;
+  color: rgba(255,255,255,0.5); margin-bottom: 36px; max-width: 440px;
+  margin-left: auto; margin-right: auto; line-height: 1.6;
+}
+.kit-wrapper { max-width: 480px; margin: 0 auto; }
+
+/* FOOTER */
+footer { background: var(--black); padding: 64px 60px 40px; }
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand p { font-family: var(--heading); font-size: 18px; font-weight: 400; color: var(--white); margin-bottom: 12px; }
+.footer-brand span { font-family: var(--body); font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.6; }
+.footer-col h4 { font-family: var(--body); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+.footer-col a { display: block; font-family: var(--body); font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--white); }
+.footer-bottom { max-width: 1100px; margin: 0 auto; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+.footer-copy { font-family: var(--body); font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.25); }
+.footer-back { font-family: var(--body); font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.footer-back:hover { color: var(--white); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media(max-width: 960px) {
+  nav { padding: 0 32px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .page-header { padding: 90px 32px 48px; }
+  .filter-bar { padding: 24px 32px 0; }
+  .blog-section { padding: 32px 32px 80px; }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .email-section { padding: 60px 32px; }
+  footer { padding: 48px 32px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media(max-width: 600px) {
+  nav { padding: 0 20px; }
+  .page-header { padding: 80px 20px 40px; }
+  .filter-bar { padding: 20px 20px 0; }
+  .blog-section { padding: 24px 20px 60px; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .email-section { padding: 48px 20px; }
+  footer { padding: 40px 20px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a>
+  <div class="nav-links">
+    <a href="/#tools">Free Tools</a>
+    <a href="/#books">Books</a>
+    <a href="/">Home</a>
+    <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
+    <a href="#email" class="nav-cta">Subscribe</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="/#tools">Free Tools</a>
+  <a href="/#books">Books</a>
+  <a href="/">Home</a>
+  <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
+  <a href="#email">Subscribe</a>
+</div>
+
+<!-- PAGE HEADER -->
+<div class="page-header reveal">
+  <p class="page-eyebrow">Supply Chain Blog</p>
+  <h1 class="page-title">All Posts</h1>
+  <p class="page-sub">Practical reads for supply chain managers. No theory. No jargon. Just what actually works in the field.</p>
+</div>
+
+<!-- FILTER TABS -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterPosts('all')">All Posts</button>
+  <button class="filter-btn" onclick="filterPosts('inventory')">Inventory</button>
+  <button class="filter-btn" onclick="filterPosts('supplier')">Supplier</button>
+  <button class="filter-btn" onclick="filterPosts('freight')">Freight</button>
+  <button class="filter-btn" onclick="filterPosts('strategy')">Strategy</button>
+</div>
+
+<!-- BLOG GRID -->
+<div class="blog-section">
+
+  <p class="batch-label">Batch 2 — 20 Posts</p>
+  <div class="blog-grid" id="batch2">
+
+    <a href="how-to-reduce-inventory-costs.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">How to Reduce Inventory Costs Without Cutting Stock</p>
+        <p class="blog-excerpt">You do not need to reduce stock to reduce costs. You need to reduce waste. Four proven ways to lower costs without creating stockouts.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-a-purchase-order.html" class="blog-card reveal" data-cat="strategy">
+      <div class="blog-card-body">
+        <p class="blog-cat">Procurement</p>
+        <p class="blog-title">What Is a Purchase Order and How to Use It</p>
+        <p class="blog-excerpt">A purchase order is a written agreement between you and your supplier before anything ships. Here is what it must include.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-find-reliable-supplier.html" class="blog-card reveal" data-cat="supplier">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supplier Management</p>
+        <p class="blog-title">How to Find a Reliable Supplier for Your Business</p>
+        <p class="blog-excerpt">Price is one number. Reliability is everything else. Five things to check before you commit to a supplier.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-safety-stock.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">What Is Safety Stock and How Much Do You Need?</p>
+        <p class="blog-excerpt">Safety stock is extra inventory you keep to protect against delays and demand spikes. Here is the exact formula to calculate yours.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-reduce-freight-costs.html" class="blog-card reveal" data-cat="freight">
+      <div class="blog-card-body">
+        <p class="blog-cat">Freight and Logistics</p>
+        <p class="blog-title">How to Reduce Freight Costs Without Changing Suppliers</p>
+        <p class="blog-excerpt">Most businesses overpay for freight without knowing it. These five fixes cost nothing to implement and work immediately.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-bill-of-materials.html" class="blog-card reveal" data-cat="strategy">
+      <div class="blog-card-body">
+        <p class="blog-cat">Operations</p>
+        <p class="blog-title">What Is a Bill of Materials and Why You Need One</p>
+        <p class="blog-excerpt">A bill of materials is a complete list of every component needed to make or sell your product. Here is what yours should include.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-handle-late-supplier-delivery.html" class="blog-card reveal" data-cat="supplier">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supplier Management</p>
+        <p class="blog-title">How to Handle a Late Supplier Delivery</p>
+        <p class="blog-excerpt">A late delivery does not have to become a customer problem. Here is what to do the moment you see a delay coming.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-lead-time.html" class="blog-card reveal" data-cat="strategy">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supply Chain Basics</p>
+        <p class="blog-title">What Is Lead Time and Why It Affects Everything</p>
+        <p class="blog-excerpt">Lead time is the number of days between placing an order and receiving it. It controls your reorder point, safety stock, cash flow, and customer promises.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-negotiate-payment-terms.html" class="blog-card reveal" data-cat="supplier">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supplier Management</p>
+        <p class="blog-title">How to Negotiate Better Payment Terms With Suppliers</p>
+        <p class="blog-excerpt">Payment terms affect your cash flow more than almost any other supplier agreement. Five ways to negotiate better terms starting today.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-just-in-time-inventory.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">What Is Just in Time Inventory and Does It Work?</p>
+        <p class="blog-excerpt">Just in time means ordering stock only when you need it. Here is when it works, when it fails, and what most businesses should do instead.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-set-up-inventory-system.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">How to Set Up a Simple Inventory System</p>
+        <p class="blog-excerpt">You do not need expensive software to track inventory. You need a system you will actually use. Five steps to set one up today.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-a-stockout.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">What Is a Stockout and What Does It Actually Cost?</p>
+        <p class="blog-excerpt">A stockout is when you run out of a product a customer wants to buy. The cost is higher than most people realize. Here are the five real costs.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-read-commercial-invoice.html" class="blog-card reveal" data-cat="freight">
+      <div class="blog-card-body">
+        <p class="blog-cat">Freight and Logistics</p>
+        <p class="blog-title">How to Read a Commercial Invoice Correctly</p>
+        <p class="blog-excerpt">A commercial invoice is not just a bill. It is a customs document. Errors cost you time and money. Six things to check on every invoice.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-demand-forecasting.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">What Is Demand Forecasting and How to Do It</p>
+        <p class="blog-excerpt">Demand forecasting is estimating how much you will sell in a future period. You already have the data. Here is how to use it.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-build-backup-supplier-plan.html" class="blog-card reveal" data-cat="supplier">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supplier Management</p>
+        <p class="blog-title">How to Build a Backup Supplier Plan</p>
+        <p class="blog-excerpt">Every business that depends on one supplier is one disruption away from a serious problem. Five steps to build your backup plan now.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-economic-order-quantity.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">What Is Economic Order Quantity?</p>
+        <p class="blog-excerpt">Economic order quantity is the ideal order size that minimizes your total inventory costs. Here is the formula and how to apply it.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-track-supplier-performance.html" class="blog-card reveal" data-cat="supplier">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supplier Management</p>
+        <p class="blog-title">How to Track Supplier Performance Without a Formal System</p>
+        <p class="blog-excerpt">You do not need software to know if your supplier is performing. You need four numbers. Here is what to track and why.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-tariffs-mean-for-supply-chain.html" class="blog-card reveal" data-cat="strategy">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supply Chain Strategy</p>
+        <p class="blog-title">What Tariffs Mean for Your Supply Chain</p>
+        <p class="blog-excerpt">A tariff is a tax on imported goods. When tariffs change, your landed cost changes. Five things to do when that happens.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="how-to-cut-warehouse-costs.html" class="blog-card reveal" data-cat="strategy">
+      <div class="blog-card-body">
+        <p class="blog-cat">Operations</p>
+        <p class="blog-title">How to Cut Warehouse Costs Without Reducing Staff</p>
+        <p class="blog-excerpt">Most warehouse cost problems are layout and process problems. Not staffing problems. Five areas where warehouse costs hide.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="what-is-a-3pl.html" class="blog-card reveal" data-cat="freight">
+      <div class="blog-card-body">
+        <p class="blog-cat">Freight and Logistics</p>
+        <p class="blog-title">What Is a 3PL and When Should You Use One?</p>
+        <p class="blog-excerpt">A 3PL handles your warehousing, fulfillment, or freight on your behalf. Here is when it makes sense and when it does not.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="batch-label">Batch 1 — 10 Posts</p>
+  <div class="blog-grid" id="batch1">
+
+    <a href="5-inventory-metrics-ops-managers.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">5 Inventory Metrics Every Manager Must Track</p>
+        <p class="blog-excerpt">Most managers track the wrong numbers. These 5 actually connect to cash flow, stockout prevention, and operational health.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="5-inventory-kpis-that-actually-matter.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">Cutting Inventory to Save Cash? Track These 5 KPIs First</p>
+        <p class="blog-excerpt">Most managers cut inventory and create stockouts within 60 days. These 5 KPIs tell you exactly where to cut and where not to.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="your-inventory-is-cash-in-disguise.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">Your Inventory Is Cash in Disguise</p>
+        <p class="blog-excerpt">Every item on your shelf is cash you cannot spend yet. And it is costing you 20 to 30 percent of its value every year just to sit there.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="abc-analysis-find-your-money.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">ABC Analysis — Find Where Your Money Actually Is</p>
+        <p class="blog-excerpt">20% of your products drive 80% of your revenue. ABC analysis finds that 20% in 10 minutes using data you already have.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="you-dont-know-your-true-inventory-cost.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">You Don't Know Your True Inventory Cost</p>
+        <p class="blog-excerpt">That $10 product does not cost $10. Once freight, storage, and obsolescence are added it is $13.08. Every pricing decision you have made is affected.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="total-landed-cost-calculator.html" class="blog-card reveal" data-cat="freight">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supply Chain Strategy</p>
+        <p class="blog-title">Total Landed Cost — What Freight Actually Costs Beyond Unit Price</p>
+        <p class="blog-excerpt">Unit price is the starting point. Landed cost after freight, duties, and handling is the decision point. Here is how to calculate it.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="supply-chain-risk-assessment.html" class="blog-card reveal" data-cat="strategy">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supply Chain Strategy</p>
+        <p class="blog-title">Supply Chain Risk Assessment — 5 Hidden Risks Most Businesses Ignore</p>
+        <p class="blog-excerpt">Five risks that consistently appear in supply chains that look stable right before something breaks. Find them before they find you.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="why-cheapest-supplier-most-expensive.html" class="blog-card reveal" data-cat="supplier">
+      <div class="blog-card-body">
+        <p class="blog-cat">Supplier Management</p>
+        <p class="blog-title">Why the Cheapest Supplier Is the Most Expensive Decision You Will Make</p>
+        <p class="blog-excerpt">Supplier A costs $8 per unit. Supplier B costs $9.50. After total cost analysis Supplier A costs $10.87. Supplier B costs $10.61.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="classify-skus-abc-analysis.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">The 20% of Your Products Driving 80% of Revenue — Do You Know Which Ones?</p>
+        <p class="blog-excerpt">You have 200 products. 15 of them drive 80% of your revenue. Here is how to find them in 10 minutes and manage them differently.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="inventory-carrying-cost.html" class="blog-card reveal" data-cat="inventory">
+      <div class="blog-card-body">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">Inventory Carrying Cost — What It Actually Costs You to Hold Stock</p>
+        <p class="blog-excerpt">Carrying cost averages 20 to 30% of inventory value per year. On $150,000 inventory that is $45,000 annually. Most managers have never calculated it.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<!-- EMAIL -->
+<div class="email-section" id="email">
+  <p class="email-eyebrow">Free Tools and Updates</p>
+  <h2 class="email-heading reveal">Free tools for supply chain managers.</h2>
+  <p class="email-sub reveal" style="transition-delay:0.1s">Templates, calculators, and frameworks for managers running inventory, suppliers, and logistics without a manual.</p>
+  <div class="kit-wrapper reveal" style="transition-delay:0.2s">
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <form action="https://app.kit.com/forms/9445646/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9445646" data-uid="cf8e7a4d67" data-format="inline" data-version="5">
+      <div data-style="full">
+        <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields" style="display:flex;gap:0;max-width:480px;margin:0 auto">
+          <div class="formkit-field" style="flex:1">
+            <input class="formkit-input" name="email_address" style="width:100%;padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:14px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:#fff;outline:none;" aria-label="Email Address" placeholder="Your email address" required type="email">
+          </div>
+          <button data-element="submit" class="formkit-submit" style="background:#E84D1C;color:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap;">
+            <span>Subscribe</span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,0.25);margin-top:14px;">No spam. Unsubscribe anytime.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p>Arnie Rose · Supply Chain</p>
+      <span>Supply Chain resources for managers who were handed the job and need systems that work.</span>
+    </div>
+    <div class="footer-col">
+      <h4>Free Tools</h4>
+      <a href="inventory-health-calculator.html">Inventory Calculator</a>
+      <a href="supplier-scorecard.html">Supplier Scorecard</a>
+      <a href="landed-cost-calculator.html">Landed Cost Calculator</a>
+      <a href="stockout-risk-checker.html">Stockout Risk Checker</a>
+    </div>
+    <div class="footer-col">
+      <h4>Blog</h4>
+      <a href="you-dont-know-your-true-inventory-cost.html">True Inventory Cost</a>
+      <a href="why-cheapest-supplier-most-expensive.html">Cheapest Supplier</a>
+      <a href="inventory-carrying-cost.html">Carrying Cost</a>
+      <a href="blog.html">All Posts</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
+      <a href="https://youwereneverseries.arniefelicilda.com" target="_blank" rel="noopener">YWN Series</a>
+      <a href="https://ph.pinterest.com/arniebfelicilda" target="_blank" rel="noopener">Pinterest</a>
+      <a href="https://arfelicilda.kit.com" target="_blank" rel="noopener">Newsletter</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
+    <a href="https://arniefelicilda.com" class="footer-back" target="_blank" rel="noopener">arniefelicilda.com →</a>
+  </div>
+</footer>
+
+<script>
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const navMobile = document.getElementById('nav-mobile');
+hamburger.addEventListener('click', () => navMobile.classList.toggle('open'));
+navMobile.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navMobile.classList.remove('open')));
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+
+// Filter
+function filterPosts(cat) {
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.blog-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
