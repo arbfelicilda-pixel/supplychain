@@ -1,182 +1,1017 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N5YLNSJGN2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-N5YLNSJGN2');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Project Management Tools for Accidental Project Managers — Arnie Rose</title>
-<meta name="description" content="Free project management tools, templates, and frameworks for operations managers and accidental project managers. No PMP required. By Arnie Rose.">
+<title>Supply Chain Management — Arnie Rose Felicilda</title>
+<meta name="description" content="Free supply chain tools, templates, and frameworks for operations managers running inventory, suppliers, and logistics without a manual. By Arnie Rose Felicilda.">
+<meta name="keywords" content="supply chain management, inventory management, supplier scorecard, operations manager, supply chain tools, inventory calculator, procurement, logistics">
 <meta name="robots" content="index, follow">
-<meta name="author" content="Arnie Rose Felicilda">
-<meta name="p:domain_verify" content="7b1e064c1e30a5963cab42d655554e7e">
-<link rel="canonical" href="https://projectmanagement.arniefelicilda.com">
-<link rel="sitemap" type="application/xml" href="https://projectmanagement.arniefelicilda.com/sitemap.xml">
+<link rel="canonical" href="https://supplychain.arniefelicilda.com">
+<link rel="sitemap" type="application/xml" href="https://supplychain.arniefelicilda.com/sitemap.xml">
 <meta name="google-site-verification" content="DH7MdnwmpOCT7CHiAPiH4TpU5-nKyz2hRAzOxp9P7Rg" />
-<meta property="og:title" content="Free Project Management Tools — Arnie Rose Felicilda">
-<meta property="og:description" content="Free tools for project managers who learned on the job. Charter, sprint system, dashboard, recovery checklist, and AI prompts.">
+<meta property="og:title" content="Supply Chain Management — Arnie Rose Felicilda">
+<meta property="og:description" content="Free tools, templates, and frameworks for ops managers running supply chain without a manual.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://projectmanagement.arniefelicilda.com">
-<meta property="og:image" content="https://projectmanagement.arniefelicilda.com/og-homepage.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Arnie Rose — Project Management">
+<meta property="og:url" content="https://supplychain.arniefelicilda.com">
+<meta property="og:site_name" content="Arnie Rose — Supply Chain">
+<meta property="og:image" content="https://supplychain.arniefelicilda.com/og-homepage.png">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1620">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://supplychain.arniefelicilda.com/og-homepage.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Project Management Tools — Arnie Rose Felicilda","url":"https://projectmanagement.arniefelicilda.com","description":"Free project management tools for ops managers who learned on the job.","author":{"@type":"Person","name":"Arnie Rose Felicilda","url":"https://arniefelicilda.com"}}
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Arnie Rose Felicilda",
+  "url": "https://supplychain.arniefelicilda.com",
+  "jobTitle": "Supply Chain Educator",
+  "knowsAbout": ["Supply Chain Management", "Inventory Management", "Procurement", "Logistics", "Operations Management"],
+  "sameAs": ["https://arniefelicilda.com", "https://ph.pinterest.com/arniebfelicilda"]
+}
 </script>
 <style>
-:root{--black:#111111;--white:#FFFFFF;--gray-light:#F5F5F5;--gray-mid:#E5E5E5;--gray-text:#666666;--blue:#1D6FA4;--blue-dark:#155a87;--heading:'DM Serif Display',Georgia,serif;--body:'DM Sans',sans-serif;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--body);background:var(--white);color:var(--black);-webkit-font-smoothing:antialiased}
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid var(--gray-mid);padding:0 60px;height:60px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--black);text-decoration:none}
-.nav-logo span{color:var(--blue)}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{font-family:var(--body);font-size:13px;color:var(--gray-text);text-decoration:none;transition:color 0.2s}
-.nav-links a:hover{color:var(--black)}
-.nav-cta{background:var(--blue);color:var(--white) !important;padding:8px 20px;font-weight:600 !important;font-size:12px !important;letter-spacing:0.06em;text-transform:uppercase}
-.nav-cta:hover{background:var(--blue-dark) !important}
-/* HERO */
-.hero{padding:120px 60px 80px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:80px;align-items:center}
-.hero-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.hero-eyebrow::before{content:'';display:block;width:20px;height:1.5px;background:var(--blue)}
-.hero-title{font-family:var(--heading);font-size:clamp(38px,5vw,60px);font-weight:400;line-height:1.1;color:var(--black);margin-bottom:20px}
-.hero-title em{font-style:italic;color:var(--blue)}
-.hero-sub{font-family:var(--body);font-size:18px;font-weight:300;color:var(--gray-text);line-height:1.7;margin-bottom:32px;max-width:480px}
-.hero-stats{display:flex;gap:32px;margin-bottom:40px}
-.stat-item{display:flex;flex-direction:column;gap:4px}
-.stat-num{font-family:var(--heading);font-size:28px;font-weight:400;color:var(--blue);line-height:1}
-.stat-label{font-family:var(--body);font-size:12px;font-weight:300;color:var(--gray-text)}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{background:var(--blue);color:var(--white);font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 28px;text-decoration:none;display:inline-block;transition:background 0.2s}
-.btn-primary:hover{background:var(--blue-dark)}
-.btn-secondary{background:transparent;color:var(--black);font-family:var(--body);font-size:13px;font-weight:500;padding:14px 28px;text-decoration:none;border:1px solid var(--gray-mid);display:inline-block;transition:all 0.2s}
-.btn-secondary:hover{border-color:var(--black)}
-/* BOOK CARD */
-.book-card{background:var(--black);padding:40px 36px;position:relative}
-.book-badge{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);background:rgba(29,111,164,0.15);padding:4px 12px;display:inline-block;margin-bottom:20px}
-.book-cover{width:100%;max-width:220px;height:auto;display:block;margin-bottom:24px;box-shadow:-6px 8px 30px rgba(0,0,0,0.6)}
-.book-title{font-family:var(--heading);font-size:22px;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:8px}
-.book-sub{font-family:var(--body);font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);margin-bottom:20px;line-height:1.6}
-.book-features{list-style:none;margin-bottom:24px}
-.book-features li{font-family:var(--body);font-size:13px;color:rgba(255,255,255,0.7);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:8px}
-.book-features li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0}
-.btn-buy{display:block;background:var(--blue);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 24px;text-decoration:none;text-align:center;transition:background 0.2s;margin-bottom:10px}
-.btn-buy:hover{background:var(--blue-dark)}
-.book-price{font-family:var(--body);font-size:11px;color:rgba(255,255,255,0.3);text-align:center}
-/* SECTION SHARED */
-.section-wrap{padding:80px 60px;max-width:1100px;margin:0 auto}
-.section-label{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.section-label::before{content:'';display:block;width:20px;height:1.5px;background:var(--blue)}
-.section-title{font-family:var(--heading);font-size:clamp(28px,4vw,42px);font-weight:400;color:var(--black);margin-bottom:12px;line-height:1.15}
-.section-sub{font-family:var(--body);font-size:16px;font-weight:300;color:var(--gray-text);margin-bottom:48px;max-width:560px;line-height:1.7}
-/* GATE SECTION */
-.gate-section{background:var(--gray-light);border-top:1px solid var(--gray-mid);padding:80px 60px}
-.gate-inner{max-width:1100px;margin:0 auto}
-.gate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--gray-mid);margin-top:48px}
-.gate-card{background:var(--white);padding:36px 32px;display:flex;flex-direction:column;gap:12px}
-.gate-num{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue)}
-.gate-title{font-family:var(--heading);font-size:22px;font-weight:400;color:var(--black);line-height:1.2}
-.gate-desc{font-family:var(--body);font-size:14px;font-weight:300;color:var(--gray-text);line-height:1.7}
-.gate-badge{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);background:var(--blue);padding:3px 10px;display:inline-block;align-self:flex-start}
-/* FREE TOOLS */
-.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-mid)}
-.tool-card{background:var(--white);padding:32px 28px;display:flex;flex-direction:column;gap:10px;transition:background 0.2s}
-.tool-card:hover{background:var(--gray-light)}
-.tool-num{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue)}
-.tool-name{font-family:var(--heading);font-size:20px;font-weight:400;color:var(--black);line-height:1.2}
-.tool-desc{font-family:var(--body);font-size:14px;font-weight:300;color:var(--gray-text);line-height:1.6}
-.tool-link{font-family:var(--body);font-size:12px;font-weight:600;color:var(--blue);text-decoration:none;letter-spacing:0.04em;margin-top:4px}
-.tool-link:hover{color:var(--blue-dark)}
-/* SUBSCRIBE GATE */
-.subscribe-gate{background:var(--black);padding:80px 60px}
-.subscribe-inner{max-width:680px;margin:0 auto;text-align:center}
-.sub-eyebrow{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
-.sub-title{font-family:var(--heading);font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--white);margin-bottom:12px;line-height:1.15}
-.sub-desc{font-family:var(--body);font-size:16px;font-weight:300;color:rgba(255,255,255,0.5);margin-bottom:36px;line-height:1.7}
-.kit-form{display:flex;gap:0;max-width:520px;margin:0 auto}
-.kit-form input{flex:1;padding:14px 16px;font-family:var(--body);font-size:14px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:var(--white);outline:none}
-.kit-form input::placeholder{color:rgba(255,255,255,0.35)}
-.kit-form button{background:var(--blue);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap}
-.kit-form button:hover{background:var(--blue-dark)}
-.sub-note{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.25);margin-top:16px}
-/* WAITLIST */
-.waitlist-section{padding:80px 60px;background:var(--white);border-top:1px solid var(--gray-mid)}
-.waitlist-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.waitlist-badge{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--white);background:var(--blue);padding:4px 12px;display:inline-block;margin-bottom:20px}
-.waitlist-title{font-family:var(--heading);font-size:clamp(28px,3vw,38px);font-weight:400;color:var(--black);margin-bottom:12px;line-height:1.2}
-.waitlist-sub{font-family:var(--body);font-size:15px;font-weight:300;color:var(--gray-text);line-height:1.7;margin-bottom:8px}
-.waitlist-features{list-style:none;margin:24px 0 32px}
-.waitlist-features li{font-family:var(--body);font-size:14px;color:var(--black);padding:8px 0;border-bottom:1px solid var(--gray-mid);display:flex;align-items:center;gap:10px}
-.waitlist-features li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0}
-.waitlist-form-box{background:var(--gray-light);padding:40px 36px}
-.wf-title{font-family:var(--heading);font-size:22px;font-weight:400;color:var(--black);margin-bottom:8px}
-.wf-sub{font-family:var(--body);font-size:14px;font-weight:300;color:var(--gray-text);margin-bottom:24px;line-height:1.6}
-.wf-form{display:flex;flex-direction:column;gap:12px}
-.wf-form input{padding:13px 16px;font-family:var(--body);font-size:14px;border:1px solid var(--gray-mid);background:var(--white);color:var(--black);outline:none}
-.wf-form input:focus{border-color:var(--blue)}
-.wf-form button{background:var(--blue);color:var(--white);font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer}
-.wf-form button:hover{background:var(--blue-dark)}
-.wf-note{font-family:var(--body);font-size:11px;color:var(--gray-text);margin-top:8px}
-/* BLOGS */
-.blogs-section{padding:80px 60px;background:var(--gray-light);border-top:1px solid var(--gray-mid)}
-.blogs-inner{max-width:1100px;margin:0 auto}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gray-mid);margin-top:48px}
-.blog-card{background:var(--white);padding:28px 24px;text-decoration:none;color:inherit;display:block;transition:background 0.2s}
-.blog-card:hover{background:var(--gray-light)}
-.blog-cat{font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-.blog-title{font-family:var(--heading);font-size:19px;font-weight:400;color:var(--black);line-height:1.3;margin-bottom:10px}
-.blog-read{font-family:var(--body);font-size:12px;color:var(--gray-text)}
-/* FOOTER */
-footer{background:var(--black);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.footer-copy{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.25)}
-.footer-links{display:flex;gap:24px}
-.footer-links a{font-family:var(--body);font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none}
-.footer-links a:hover{color:var(--white)}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-hamburger span{display:block;width:20px;height:1px;background:var(--black)}
-.nav-mobile{display:none;position:fixed;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--gray-mid);flex-direction:column;z-index:99}
-.nav-mobile.open{display:flex}
-.nav-mobile a{font-family:var(--body);font-size:12px;color:var(--gray-text);text-decoration:none;padding:14px 24px;border-bottom:1px solid var(--gray-mid);transition:color 0.2s}
-.nav-mobile a:hover{color:var(--black)}
-@media(max-width:900px){
-  nav{padding:0 20px}
-  .nav-links{display:none}
-  .nav-hamburger{display:flex}
+:root {
+  --black: #111111;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-mid: #E5E5E5;
+  --gray-text: #666666;
+  --orange: #E84D1C;
+  --orange-dark: #C43D12;
+  --heading: 'DM Serif Display', Georgia, serif;
+  --body: 'DM Sans', sans-serif;
 }
-  .hero{grid-template-columns:1fr;padding:90px 20px 60px;gap:48px}
-  .book-card{padding:32px 24px}
-  .section-wrap,.gate-inner,.blogs-inner{padding:60px 20px}
-  .gate-section,.subscribe-gate,.waitlist-section,.blogs-section{padding:60px 20px}
-  .gate-grid,.tools-grid,.blog-grid{grid-template-columns:1fr}
-  .waitlist-inner{grid-template-columns:1fr;gap:40px}
-  .kit-form{flex-direction:column}
-  footer{padding:32px 20px}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* BLOG GRID WITH IMAGES */
+.blog-grid-full {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--gray-mid);
+  margin-top: 48px;
+}
+
+.blog-card {
+  background: var(--white);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+  border-top: 2px solid transparent;
+}
+
+.blog-card:hover {
+  background: var(--gray-light);
+  border-top-color: var(--orange);
+}
+
+.blog-cat {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.blog-title {
+  font-family: var(--heading);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.blog-excerpt {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gray-text);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.blog-arrow {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.04em;
+  margin-top: 16px;
+}
+
+@media(max-width: 900px) {
+  .blog-grid-full { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 600px) {
+  .blog-grid-full { grid-template-columns: 1fr; }
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-mid);
+  padding: 0 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.nav-logo span {
+  color: var(--orange);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gray-text);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--black); }
+
+.nav-cta {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  background: var(--black);
+  padding: 9px 20px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--orange) !important; }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--black);
+}
+
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--gray-mid);
+  padding: 24px 32px;
+  z-index: 99;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-mobile.open { display: flex; }
+
+.nav-mobile a {
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* HERO */
+.hero {
+  padding: 140px 60px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--orange);
+}
+
+.hero-headline {
+  font-family: var(--heading);
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--orange);
+}
+
+.hero-sub {
+  font-family: var(--body);
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--gray-text);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--black);
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.btn-primary:hover { background: var(--orange); }
+
+.btn-secondary {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: transparent;
+  border: 1.5px solid var(--black);
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* HERO STATS CARD */
+.hero-card {
+  background: var(--black);
+  padding: 40px 36px;
+  position: relative;
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1.5px solid var(--gray-mid);
+  z-index: -1;
+}
+
+.hero-card-label {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 28px;
+}
+
+.hero-stat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-stat {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+}
+
+.hero-stat-num {
+  font-family: var(--heading);
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-label {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+.hero-card-cta {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s;
+}
+
+.hero-card-cta:hover { gap: 14px; }
+
+/* DIVIDER */
+.divider {
+  height: 1px;
+  background: var(--gray-mid);
+  margin: 0 60px;
+}
+
+/* SECTION BASE */
+.section {
+  padding: 80px 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-full {
+  padding: 80px 60px;
+  background: var(--gray-light);
+}
+
+.section-full .section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-dark {
+  padding: 80px 60px;
+  background: var(--black);
+}
+
+.section-dark .section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--orange);
+}
+
+.eyebrow-white {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow-white::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: var(--orange);
+}
+
+.section-heading {
+  font-family: var(--heading);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.section-heading-white {
+  font-family: var(--heading);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  font-family: var(--body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--gray-text);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+
+.section-sub-white {
+  font-family: var(--body);
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+
+/* TOOLS GRID */
+.tools-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--gray-mid);
+}
+
+.tool-card {
+  background: var(--white);
+  padding: 36px 32px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.tool-card:hover { background: var(--gray-light); }
+
+.tool-card:hover .tool-arrow { gap: 10px; }
+
+.tool-num {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.tool-name {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.tool-desc {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tool-tag {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-text);
+  border: 1px solid var(--gray-mid);
+  padding: 4px 10px;
+  margin-bottom: 20px;
+}
+
+.tool-arrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+/* BOOKS / WAITLIST */
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+.book-card {
+  background: var(--black);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 40px 36px;
+}
+
+.book-num {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.book-cover-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  max-width: 160px;
+  background: var(--white);
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.book-cover-placeholder p {
+  font-family: var(--heading);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.3;
+}
+
+.book-cover-placeholder span {
+  font-family: var(--body);
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--gray-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  display: block;
+}
+
+.book-title {
+  font-family: var(--heading);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.book-desc {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.book-badge {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  padding: 5px 12px;
+  margin-bottom: 20px;
+}
+
+.book-link {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.book-link:hover { color: var(--orange); gap: 10px; }
+
+/* BLOG */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--gray-mid);
+}
+
+.blog-card {
+  background: var(--white);
+  padding: 32px 28px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background 0.2s;
+}
+
+.blog-card:hover { background: var(--gray-light); }
+.blog-card:hover .blog-arrow { gap: 10px; }
+
+.blog-cat {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.blog-title {
+  font-family: var(--heading);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.blog-excerpt {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gray-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.blog-arrow {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+/* EMAIL SECTION */
+.email-section {
+  padding: 80px 60px;
+  background: var(--black);
+  text-align: center;
+}
+
+.email-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.email-heading {
+  font-family: var(--heading);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.email-sub {
+  font-family: var(--body);
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.kit-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ABOUT STRIP */
+.about-strip {
+  padding: 60px;
+  background: var(--gray-light);
+  border-top: 1px solid var(--gray-mid);
+  border-bottom: 1px solid var(--gray-mid);
+}
+
+.about-strip-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-quote {
+  font-family: var(--heading);
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--black);
+  line-height: 1.4;
+  border-left: 3px solid var(--orange);
+  padding-left: 24px;
+}
+
+.about-text p {
+  font-family: var(--body);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--gray-text);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.about-text p:last-child { margin-bottom: 0; }
+
+.about-link {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  transition: gap 0.2s, color 0.2s;
+}
+
+.about-link:hover { color: var(--orange); gap: 10px; }
+
+/* FOOTER */
+footer {
+  background: var(--black);
+  padding: 60px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand p {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer-brand span {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.7;
+  display: block;
+  max-width: 240px;
+}
+
+.footer-col h4 {
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 16px;
+}
+
+.footer-col a {
+  display: block;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover { color: var(--white); }
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-back {
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-back:hover { color: var(--white); }
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width: 960px) {
+  nav { padding: 0 32px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; padding: 100px 32px 60px; gap: 40px; }
+  .hero-card { max-width: 400px; }
+  .hero-stat-row { flex-direction: row; flex-wrap: wrap; gap: 16px; }
+  .hero-stat { border-top: none; border-left: 1px solid rgba(255,255,255,0.1); padding: 0 0 0 16px; }
+  .divider { margin: 0 32px; }
+  .section { padding: 60px 32px; }
+  .section-full { padding: 60px 32px; }
+  .section-dark { padding: 60px 32px; }
+  .tools-header { grid-template-columns: 1fr; gap: 20px; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .about-strip { padding: 48px 32px; }
+  .about-strip-inner { grid-template-columns: 1fr; gap: 32px; }
+  .email-section { padding: 60px 32px; }
+  footer { padding: 48px 32px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media(max-width: 600px) {
+  nav { padding: 0 20px; }
+  .hero { padding: 90px 20px 48px; }
+  .divider { margin: 0 20px; }
+  .section { padding: 48px 20px; }
+  .section-full { padding: 48px 20px; }
+  .section-dark { padding: 48px 20px; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .about-strip { padding: 40px 20px; }
+  .email-section { padding: 48px 20px; }
+  footer { padding: 40px 20px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">Arnie Rose <span>·</span> Project Management</a>
+  <a href="/" class="nav-logo">Arnie Rose <span>·</span> Supply Chain</a>
   <div class="nav-links">
     <a href="#tools">Free Tools</a>
     <a href="#books">Books</a>
     <a href="#blog">Blog</a>
     <a href="blog.html">Blog Archive</a>
     <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
-    <a href="#subscribe" class="nav-cta">Subscribe</a>
+    <a href="#email" class="nav-cta">Subscribe</a>
   </div>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -185,242 +1020,340 @@ footer{background:var(--black);padding:40px 60px;display:flex;justify-content:sp
   <a href="#tools">Free Tools</a>
   <a href="#books">Books</a>
   <a href="#blog">Blog</a>
-  <a href="blog.html">Blog Archive</a>
+    <a href="blog.html">Blog Archive</a>
   <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
-  <a href="#subscribe">Subscribe</a>
+  <a href="#email">Subscribe</a>
 </div>
 
 <!-- HERO -->
-<section>
-  <div class="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Project Management</p>
-      <h1 class="hero-title">You were handed a project. <em>Here is the system.</em></h1>
-      <p class="hero-sub">Free tools for people running projects without formal training. No certification needed. Start this week.</p>
-      <div class="hero-stats">
-        <div class="stat-item"><span class="stat-num">11.4%</span><span class="stat-label">Average waste reduced</span></div>
-        <div class="stat-item"><span class="stat-num">15 min</span><span class="stat-label">Daily system</span></div>
-        <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Free tools included</span></div>
+<section class="hero">
+  <div class="hero-text reveal">
+    <p class="hero-eyebrow">Supply Chain Management</p>
+    <h1 class="hero-headline">You manage the supply chain.<br><em>Here are the tools that make it work.</em></h1>
+    <p class="hero-sub">Free tools, calculators, and frameworks for operations managers running inventory, suppliers, and logistics without formal training.</p>
+    <div class="hero-actions">
+      <a href="#tools" class="btn-primary">Browse Tools</a>
+      <a href="#blog" class="btn-secondary">Read the Blog</a>
+    </div>
+  </div>
+  <div class="hero-card reveal" style="transition-delay:0.15s">
+    <p class="hero-card-label">By the numbers</p>
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <p class="hero-stat-num">11.4%</p>
+        <p class="hero-stat-label">Average waste reduction using the 15-minute daily system</p>
       </div>
-      <div class="hero-cta">
-        <a href="#subscribe" class="btn-primary">Subscribe</a>
-        <a href="#tools" class="btn-secondary">Browse Tools</a>
+      <div class="hero-stat">
+        <p class="hero-stat-num">27%</p>
+        <p class="hero-stat-label">Of project budgets lost to scope that was never locked in writing</p>
+      </div>
+      <div class="hero-stat">
+        <p class="hero-stat-num">20–40%</p>
+        <p class="hero-stat-label">Of inventory value sitting in holding costs most managers never calculate</p>
       </div>
     </div>
-    <div class="book-card">
-      <span class="book-badge">Book 01 — Available Now</span>
-      <img src="ACCIDENTAL_PM.png" alt="The Accidental Project Manager by Arnie Rose Felicilda" class="book-cover">
-      <p class="book-title">The Accidental Project Manager</p>
-      <p class="book-sub">How to deliver projects on time without a PMP and cut waste by 11.4% using AI workflows.</p>
-      <ul class="book-features">
-        <li>15-Minute Daily Sprint System</li>
-        <li>Scope Lock Framework</li>
-        <li>24 AI Prompts Included</li>
-        <li>7 Free Templates Inside</li>
-      </ul>
-      <a href="https://arfelicilda.gumroad.com/l/accidentalprojectmanager" target="_blank" class="btn-buy">Get the Book</a>
-      <p class="book-price">Available on Gumroad</p>
-    </div>
+    <a href="#tools" class="hero-card-cta">Start with the tools →</a>
   </div>
 </section>
 
-<!-- FREE TOOLS — subscribe gate -->
-<section id="subscribe" class="subscribe-gate">
-  <div class="subscribe-inner">
-    <p class="sub-eyebrow">Free Access</p>
-    <h2 class="sub-title">Get the free tools.</h2>
-    <p class="sub-desc">Charter template, sprint system, progress dashboard, recovery checklist, and AI prompt library. Delivered to your inbox immediately.</p>
-    <form action="https://app.kit.com/forms/9449931/subscriptions" method="post" class="kit-form">
-      <input name="email_address" type="email" placeholder="Your email address" required>
-      <button type="submit">Subscribe</button>
-    </form>
-    <p class="sub-note">Free. No spam. Unsubscribe anytime.</p>
-  </div>
-</section>
+<div class="divider"></div>
 
-<!-- TOOLS OVERVIEW -->
-<section id="tools" class="section-wrap">
-  <p class="section-label">What You Get</p>
-  <h2 class="section-title">5 tools you can use this week.</h2>
-  <p class="section-sub">Subscribe above to unlock all five. Each tool is standalone. No software required beyond what you already have.</p>
+<!-- FREE TOOLS -->
+<section class="section" id="tools">
+  <div class="tools-header">
+    <div class="reveal">
+      <p class="eyebrow">Free Interactive Tools</p>
+      <h2 class="section-heading">Run the numbers.<br>Make the call.</h2>
+    </div>
+    <p class="section-sub reveal" style="transition-delay:0.1s;margin-bottom:0">Four calculators built for ops managers. Enter your numbers. Get your answer. No spreadsheet required.</p>
+  </div>
+
   <div class="tools-grid">
-    <div class="tool-card">
-      <p class="tool-num">Tool 01</p>
-      <p class="tool-name">15-Minute Daily Sprint</p>
-      <p class="tool-desc">Your daily project management system. Three priorities, one risk flag, one proactive update. Done in 15 minutes every morning.</p>
-      <a href="#subscribe" class="tool-link">Subscribe to Access →</a>
-    </div>
-    <div class="tool-card">
-      <p class="tool-num">Tool 02</p>
-      <p class="tool-name">Project Charter Workbook</p>
-      <p class="tool-desc">Fill this in before any project starts. Defines scope, milestones, approval process, and success criteria. Prevents scope creep from day one.</p>
-      <a href="#subscribe" class="tool-link">Subscribe to Access →</a>
-    </div>
-    <div class="tool-card">
-      <p class="tool-num">Tool 03</p>
-      <p class="tool-name">Weekly Progress Dashboard</p>
-      <p class="tool-desc">Track project health in 3 numbers. Green, amber, or red. Know your project status in under 5 minutes every Monday.</p>
-      <a href="#subscribe" class="tool-link">Subscribe to Access →</a>
-    </div>
-    <div class="tool-card">
-      <p class="tool-num">Tool 04</p>
-      <p class="tool-name">Project Recovery Checklist</p>
-      <p class="tool-desc">Your project went off track. This checklist recovers it in 48 hours. Three steps. Written plan. Approved restart.</p>
-      <a href="#subscribe" class="tool-link">Subscribe to Access →</a>
-    </div>
-    <div class="tool-card">
-      <p class="tool-num">Tool 05</p>
-      <p class="tool-name">AI Prompt Library</p>
-      <p class="tool-desc">24 AI prompts that replace 90 minutes of admin every week. Status updates, stakeholder emails, risk logs, and charter drafts.</p>
-      <a href="#subscribe" class="tool-link">Subscribe to Access →</a>
-    </div>
-    <div class="tool-card">
-      <p class="tool-num">Tool 06</p>
-      <p class="tool-name">Project Management Execution Toolkit</p>
-      <p class="tool-desc">9-sheet Excel system — Project Tracker, Weekly Execution Planner, Meeting Action Tracker, Risk Matrix, Stakeholder Planner, Timeline Gantt, Scope Control, and Postmortem.</p>
-      <a href="https://arfelicilda.gumroad.com/l/ProjectManagementExecutionToolkitPro" class="tool-link" target="_blank" rel="noopener">Download Free Toolkit →</a>
-    </div>
-    <div class="tool-card" style="background:var(--gray-light)">
-      <p class="tool-num">How It Works</p>
-      <p class="tool-name">Subscribe Once. Access All Five.</p>
-      <p class="tool-desc">Enter your email above. Your tools arrive immediately. No account. No app. No password. Just links that work.</p>
-      <a href="#subscribe" class="tool-link">Get Free Access →</a>
-    </div>
+    <a href="inventory-health-calculator.html" class="tool-card reveal" style="transition-delay:0.05s">
+      <p class="tool-num">SCM · 01</p>
+      <p class="tool-name">Inventory Health Calculator</p>
+      <p class="tool-tag">Interactive Calculator</p>
+      <p class="tool-desc">Enter your SKUs, holding costs, and turnover rate. Find out if your inventory is healthy or quietly bleeding cash.</p>
+      <p class="tool-arrow">Open Calculator →</p>
+    </a>
+    <a href="supplier-scorecard.html" class="tool-card reveal" style="transition-delay:0.1s">
+      <p class="tool-num">SCM · 02</p>
+      <p class="tool-name">Supplier Scorecard</p>
+      <p class="tool-tag">Interactive Scorecard</p>
+      <p class="tool-desc">Rate your top suppliers on price, quality, lead time, and reliability. Know which ones are risks before they cost you.</p>
+      <p class="tool-arrow">Open Scorecard →</p>
+    </a>
+    <a href="landed-cost-calculator.html" class="tool-card reveal" style="transition-delay:0.15s">
+      <p class="tool-num">SCM · 03</p>
+      <p class="tool-name">Total Landed Cost Calculator</p>
+      <p class="tool-tag">Interactive Calculator</p>
+      <p class="tool-desc">Add freight, duties, handling, and storage. Find out what your products actually cost to land — not just the purchase price.</p>
+      <p class="tool-arrow">Open Calculator →</p>
+    </a>
+    <a href="stockout-risk-checker.html" class="tool-card reveal" style="transition-delay:0.2s">
+      <p class="tool-num">SCM · 04</p>
+      <p class="tool-name">Stockout Risk Checker</p>
+      <p class="tool-tag">Risk Assessment Tool</p>
+      <p class="tool-desc">Enter your reorder point, lead time, and demand rate. Get your stockout risk level before peak season hits.</p>
+      <p class="tool-arrow">Open Risk Checker →</p>
+    </a>
+    <a href="https://arfelicilda.gumroad.com/l/SCMOperationsToolkitPro" class="tool-card reveal" style="transition-delay:0.25s" target="_blank" rel="noopener">
+      <p class="tool-num">SCM · 05</p>
+      <p class="tool-name">Supply Chain Management Operations Toolkit</p>
+      <p class="tool-tag">Free Excel Download</p>
+      <p class="tool-desc">8-sheet Excel system — Safety Stock Calculator, Reorder Point, Lead Time Tracker, Inventory KPI Dashboard, Supplier Scorecard, Forecasting Template, and Procurement Tracker.</p>
+      <p class="tool-arrow">Download Free Toolkit →</p>
+    </a>
   </div>
 </section>
 
-<!-- PIN-GATED TOOLS -->
-<section class="gate-section">
-  <div class="gate-inner">
-    <p class="section-label">Premium Free Tools</p>
-    <h2 class="section-title">4 advanced tools. Free with PIN.</h2>
-    <p class="section-sub">Subscribe to receive your PIN codes. Each tool unlocks instantly. No account required.</p>
-    <div class="gate-grid">
-      <div class="gate-card">
-        <p class="gate-num">Gated Tool 01</p>
-        <p class="gate-title">Scope Creep Risk Checker</p>
-        <p class="gate-desc">Enter your project details and get a scope risk score. Know before it happens whether your project is vulnerable to scope creep.</p>
-        <span class="gate-badge">PIN Required</span>
-        <a href="gate-scope-creep.html" style="font-family:var(--body);font-size:12px;font-weight:600;color:var(--blue);text-decoration:none;letter-spacing:0.04em">Enter PIN to Access →</a>
-      </div>
-      <div class="gate-card">
-        <p class="gate-num">Gated Tool 02</p>
-        <p class="gate-title">Stakeholder Communication Planner</p>
-        <p class="gate-desc">Map every stakeholder by power, interest, and influence. Know exactly who to update, how often, and what to say to each one.</p>
-        <span class="gate-badge">PIN Required</span>
-        <a href="gate-stakeholder.html" style="font-family:var(--body);font-size:12px;font-weight:600;color:var(--blue);text-decoration:none;letter-spacing:0.04em">Enter PIN to Access →</a>
-      </div>
-      <div class="gate-card">
-        <p class="gate-num">Gated Tool 03</p>
-        <p class="gate-title">Meeting ROI Calculator</p>
-        <p class="gate-desc">Calculate how much your meetings cost versus what they produce. Find the exact meetings you should cancel, shorten, or replace with an update.</p>
-        <span class="gate-badge">PIN Required</span>
-        <a href="gate-meeting-roi.html" style="font-family:var(--body);font-size:12px;font-weight:600;color:var(--blue);text-decoration:none;letter-spacing:0.04em">Enter PIN to Access →</a>
-      </div>
-      <div class="gate-card">
-        <p class="gate-num">Gated Tool 04</p>
-        <p class="gate-title">Project Budget Variance Tracker</p>
-        <p class="gate-desc">Track planned versus actual spend per milestone. Flags overspend automatically. Know your budget health before your sponsor asks.</p>
-        <span class="gate-badge">PIN Required</span>
-        <a href="gate-budget-variance.html" style="font-family:var(--body);font-size:12px;font-weight:600;color:var(--blue);text-decoration:none;letter-spacing:0.04em">Enter PIN to Access →</a>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="divider"></div>
 
-<!-- WAITLIST — Book 2 -->
-<section class="waitlist-section">
-  <div class="waitlist-inner">
-    <div>
-      <span class="waitlist-badge">Coming Soon — Book 02</span>
-      <h2 class="waitlist-title">Scope Creep to Scope Keeper</h2>
-      <p class="waitlist-sub">The complete guide to locking project scope, managing change requests, and delivering projects without the constant additions that push every deadline back.</p>
-      <ul class="waitlist-features">
-        <li>Scope lock system used on real projects</li>
-        <li>Change request framework with written approval flow</li>
-        <li>Scripts for saying no to stakeholders professionally</li>
-        <li>Templates included — ready to use immediately</li>
-      </ul>
-      <p style="font-family:var(--body);font-size:14px;font-weight:300;color:var(--gray-text);">Join the waitlist. First access when it launches.</p>
+<!-- BOOKS WAITLIST -->
+<div class="section-dark" id="books">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow-white">Coming Books</p>
+      <h2 class="section-heading-white">The books ops managers<br>actually needed.</h2>
+      <p class="section-sub-white">Two books in progress. Join the waitlist to be first when they drop — and get the free tools now while you wait.</p>
     </div>
-    <div class="waitlist-form-box">
-      <p class="wf-title">Join the Waitlist</p>
-      <p class="wf-sub">Be first when Scope Creep to Scope Keeper launches. Waitlist gets early access and launch pricing.</p>
-      <form action="https://app.kit.com/forms/9449931/subscriptions" method="post" class="wf-form">
-        <input name="email_address" type="email" placeholder="Your email address" required>
-        <button type="submit">Join Waitlist</button>
-      </form>
-      <p class="wf-note">No spam. You will only hear about the book launch.</p>
-    </div>
-  </div>
-</section>
 
-<!-- BOOKS -->
-<section id="books" style="background:var(--black);padding:80px 60px">
-  <div style="max-width:1100px;margin:0 auto">
-    <p class="section-label" style="color:var(--blue)">Coming Books</p>
-    <h2 class="section-title" style="color:var(--white);margin-bottom:12px">The books project managers actually needed.</h2>
-    <p style="font-family:var(--body);font-size:16px;font-weight:300;color:rgba(255,255,255,0.5);margin-bottom:48px;max-width:560px;line-height:1.7">Two books in progress. Subscribe to be first when they drop and get the free tools now while you wait.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.08)">
-      <div style="background:rgba(255,255,255,0.04);padding:32px 28px">
-        <p style="font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px">PM · Book 02</p>
-        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.2">Scope Creep to Scope Keeper</p>
-        <p style="font-family:var(--body);font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:20px">How to lock project scope, manage change requests, and deliver without the constant additions that push every deadline back.</p>
-        <a href="#subscribe" style="font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(29,111,164,0.4);padding-bottom:2px">Join the waitlist →</a>
+    <div class="books-grid">
+      <div class="book-card reveal" style="transition-delay:0.05s">
+        <p class="book-num">SCM · Book 01</p>
+        <div class="book-cover-placeholder">
+          <p>Inventory Without the Anxiety</p>
+          <span>Arnie Rose Felicilda</span>
+        </div>
+        <p class="book-title">Inventory Without the Anxiety</p>
+        <p class="book-desc">Practical inventory control for small business owners and ops managers tired of stockouts eating their margins and overstock draining their cash flow.</p>
+        <span class="book-badge">On Waitlist</span>
+        <br>
+        <a href="#email" class="book-link">Join the waitlist →</a>
       </div>
-      <div style="background:rgba(255,255,255,0.04);padding:32px 28px">
-        <p style="font-family:var(--body);font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px">PM · Book 03</p>
-        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;font-weight:400;color:var(--white);margin-bottom:10px;line-height:1.2">The AI Project Manager</p>
-        <p style="font-family:var(--body);font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:20px">AI workflows, prompts, and systems for project managers who want leverage without complexity.</p>
-        <a href="#subscribe" style="font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(29,111,164,0.4);padding-bottom:2px">Join the waitlist →</a>
+      <div class="book-card reveal" style="transition-delay:0.1s">
+        <p class="book-num">SCM · Book 02</p>
+        <div class="book-cover-placeholder">
+          <p>The Resilient Supply Chain</p>
+          <span>Arnie Rose Felicilda</span>
+        </div>
+        <p class="book-title">The Resilient Supply Chain</p>
+        <p class="book-desc">Supplier relationships, risk planning, and operational continuity for managers who can't afford a disruption — and don't have a contingency plan yet.</p>
+        <span class="book-badge">On Waitlist</span>
+        <br>
+        <a href="#email" class="book-link">Join the waitlist →</a>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <!-- BLOG -->
-<section class="blogs-section">
-  <div class="blogs-inner">
-    <p class="section-label">Project Management Blog</p>
-    <h2 class="section-title">Learn the system. Use it today.</h2>
-    <p class="section-sub">Practical guides for project managers who run real projects without formal training.</p>
-    <div class="blog-grid">
-      <a href="what-is-scope-creep.html" class="blog-card"><p class="blog-cat">Scope Management</p><p class="blog-title">What Is Scope Creep and How to Stop It</p><p class="blog-read">8 min read</p></a>
-      <a href="manage-projects-without-pmp.html" class="blog-card"><p class="blog-cat">Project Management Basics</p><p class="blog-title">How to Manage Projects Without a PMP Certificate</p><p class="blog-read">7 min read</p></a>
-      <a href="what-is-a-project-charter.html" class="blog-card"><p class="blog-cat">Project Planning</p><p class="blog-title">What Is a Project Charter and Why Every Project Needs One</p><p class="blog-read">6 min read</p></a>
-      <a href="how-to-track-project-progress.html" class="blog-card"><p class="blog-cat">Project Tracking</p><p class="blog-title">How to Track Project Progress Without Expensive Software</p><p class="blog-read">7 min read</p></a>
-      <a href="what-is-stakeholder-management.html" class="blog-card"><p class="blog-cat">Stakeholder Management</p><p class="blog-title">What Is Stakeholder Management and How to Do It</p><p class="blog-read">8 min read</p></a>
-      <a href="how-to-recover-delayed-project.html" class="blog-card"><p class="blog-cat">Project Recovery</p><p class="blog-title">How to Recover a Project That Is Behind Schedule</p><p class="blog-read">6 min read</p></a>
-      <a href="project-status-meeting-15-minutes.html" class="blog-card"><p class="blog-cat">Meetings</p><p class="blog-title">How to Run a Project Status Meeting in 15 Minutes</p><p class="blog-read">5 min read</p></a>
-      <a href="what-is-project-risk.html" class="blog-card"><p class="blog-cat">Risk Management</p><p class="blog-title">What Is Project Risk and How to Manage It</p><p class="blog-read">7 min read</p></a>
-      <a href="how-to-use-ai-project-management.html" class="blog-card"><p class="blog-cat">AI for Project Managers</p><p class="blog-title">How to Use AI to Save Time on Project Management Tasks</p><p class="blog-read">8 min read</p></a>
-      <a href="15-minute-daily-sprint-system.html" class="blog-card"><p class="blog-cat">Daily Systems</p><p class="blog-title">The 15-Minute Daily Sprint System for Project Managers</p><p class="blog-read">6 min read</p></a>
-    </div>
+<section class="section" id="blog">
+  <div class="reveal">
+    <p class="eyebrow">Supply Chain Blog</p>
+    <h2 class="section-heading">What the textbook<br>didn't tell you.</h2>
+    <p class="section-sub">Practical reads for supply chain managers. No theory. No jargon. Just what actually works in the field.</p>
+  </div>
+
+  <div class="blog-grid-full">
+
+    <a href="5-inventory-metrics-ops-managers.html" class="blog-card reveal" style="transition-delay:0.05s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">5 Inventory Metrics Every Ops Manager Must Track</p>
+        <p class="blog-excerpt">Most managers track the wrong numbers. These 5 actually connect to cash flow, stockout prevention, and operational health.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="5-inventory-kpis-that-actually-matter.html" class="blog-card reveal" style="transition-delay:0.08s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">Cutting Inventory to Save Cash? Track These 5 KPIs First</p>
+        <p class="blog-excerpt">Most managers cut inventory and create stockouts within 60 days. These 5 KPIs tell you exactly where to cut — and where not to.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="your-inventory-is-cash-in-disguise.html" class="blog-card reveal" style="transition-delay:0.11s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">Your Inventory Is Cash in Disguise</p>
+        <p class="blog-excerpt">Every item on your shelf is cash you can't spend yet. And it's costing you 20–30% of its value every year just to sit there.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="abc-analysis-find-your-money.html" class="blog-card reveal" style="transition-delay:0.14s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">ABC Analysis — Find Where Your Money Actually Is</p>
+        <p class="blog-excerpt">20% of your SKUs drive 80% of your revenue. ABC analysis finds that 20% in 10 minutes using data you already have.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="you-dont-know-your-true-inventory-cost.html" class="blog-card reveal" style="transition-delay:0.17s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">You Don't Know Your True Inventory Cost</p>
+        <p class="blog-excerpt">That $10 product doesn't cost $10. Once freight, storage, and obsolescence are added — it's $13.08. Every pricing decision you've made is affected.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="total-landed-cost-calculator.html" class="blog-card reveal" style="transition-delay:0.20s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Supply Chain Strategy</p>
+        <p class="blog-title">Total Landed Cost — What Freight Actually Costs Beyond Unit Price</p>
+        <p class="blog-excerpt">Unit price is the starting point. Landed cost — after freight, duties, and handling — is the decision point. Here is how to calculate it.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="supply-chain-risk-assessment.html" class="blog-card reveal" style="transition-delay:0.23s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Supply Chain Strategy</p>
+        <p class="blog-title">Supply Chain Risk Assessment — 5 Hidden Risks Most Businesses Ignore</p>
+        <p class="blog-excerpt">Five risks that consistently appear in supply chains that look stable — right before something breaks. Find them before they find you.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="why-cheapest-supplier-most-expensive.html" class="blog-card reveal" style="transition-delay:0.26s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Supplier Management</p>
+        <p class="blog-title">Why the Cheapest Supplier Is the Most Expensive Decision You Will Make</p>
+        <p class="blog-excerpt">Supplier A: $8/unit. Supplier B: $9.50/unit. After total cost analysis — Supplier A costs $10.87. Supplier B costs $10.61.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="classify-skus-abc-analysis.html" class="blog-card reveal" style="transition-delay:0.29s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">The 20% of Your Products Driving 80% of Revenue — Do You Know Which Ones?</p>
+        <p class="blog-excerpt">You have 200 SKUs. 15 of them drive 80% of your revenue. Here is how to find them in 10 minutes and manage them differently.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
+    <a href="inventory-carrying-cost.html" class="blog-card reveal" style="transition-delay:0.32s">
+      <div class="blog-card-body" style="padding:28px 24px 32px;">
+        <p class="blog-cat">Inventory Management</p>
+        <p class="blog-title">Inventory Carrying Cost — What It Actually Costs You to Hold Stock</p>
+        <p class="blog-excerpt">Carrying cost averages 20–30% of inventory value per year. On $150K inventory that is $45,000 annually. Most managers have never calculated it.</p>
+        <p class="blog-arrow">Read Post →</p>
+      </div>
+    </a>
+
   </div>
   <div style="text-align:center;margin-top:40px;padding-bottom:16px">
-    <a href="blog.html" style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#1D6FA4;border:1.5px solid #1D6FA4;padding:14px 32px;text-decoration:none;display:inline-block;transition:all 0.2s">Browse All Posts →</a>
+    <a href="blog.html" style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#111111;border:1.5px solid #111111;padding:14px 32px;text-decoration:none;display:inline-block;transition:all 0.2s">Browse All Posts →</a>
   </div>
 </section>
 
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="about-strip-inner">
+    <blockquote class="about-quote reveal">
+      "Your supply chain has a single point of failure. Most managers find it after it breaks."
+    </blockquote>
+    <div class="about-text reveal" style="transition-delay:0.1s">
+      <p>Arnie Rose Felicilda, M.A.Ed. spent over ten years in supply chain leadership across the Philippines and China. She teaches operations managers and team leads the systems they were never given when they inherited the job.</p>
+      <p>No PMP. No MBA required. Just the frameworks that actually work in the field.</p>
+      <a href="https://arniefelicilda.com" class="about-link" target="_blank" rel="noopener">About Arnie Rose →</a>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL CAPTURE -->
+<div class="email-section" id="email">
+  <div class="email-inner">
+    <p class="eyebrow-white" style="justify-content:center">Free Tools + Updates</p>
+    <h2 class="email-heading reveal">Free tools for<br>supply chain managers.</h2>
+    <p class="email-sub reveal" style="transition-delay:0.1s">Templates, calculators, and frameworks for ops managers running inventory, suppliers, and logistics without a manual.</p>
+    <div class="kit-wrapper reveal" style="transition-delay:0.2s">
+      <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9445646/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9445646" data-uid="cf8e7a4d67" data-format="inline" data-version="5" min-width="400 500 600 700 800">
+        <div data-style="full">
+          <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields" style="display:flex;gap:0">
+            <div class="formkit-field" style="flex:1">
+              <input class="formkit-input" name="email_address" style="width:100%;padding:14px 16px;font-family:'DM Sans',sans-serif;font-size:14px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:#fff;outline:none;" aria-label="Email Address" placeholder="Your email address" required type="email">
+            </div>
+            <button data-element="submit" class="formkit-submit" style="background:#E84D1C;color:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;white-space:nowrap;">
+              <div class="formkit-spinner"><div></div><div></div><div></div></div>
+              <span>Subscribe</span>
+            </button>
+          </div>
+          <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+        </div>
+      </form>
+      <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,0.25);margin-top:14px;letter-spacing:0.02em;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
-  <div class="footer-links">
-    <a href="https://arniefelicilda.com">Author Site</a>
-    <a href="https://supplychain.arniefelicilda.com">Supply Chain</a>
-    <a href="https://youwereneverseries.arniefelicilda.com">YWN Series</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p>Arnie Rose · Supply Chain</p>
+      <span>Supply Chain Management resources for operations managers who were handed the job and need systems that work.</span>
+    </div>
+    <div class="footer-col">
+      <h4>Free Tools</h4>
+      <a href="inventory-health-calculator.html">Inventory Calculator</a>
+      <a href="supplier-scorecard.html">Supplier Scorecard</a>
+      <a href="landed-cost-calculator.html">Landed Cost Calculator</a>
+      <a href="stockout-risk-checker.html">Stockout Risk Checker</a>
+    </div>
+    <div class="footer-col">
+      <h4>Blog</h4>
+      <a href="you-dont-know-your-true-inventory-cost.html">True Inventory Cost</a>
+      <a href="why-cheapest-supplier-most-expensive.html">Cheapest Supplier</a>
+      <a href="inventory-carrying-cost.html">Carrying Cost</a>
+      <a href="supply-chain-risk-assessment.html">Risk Assessment</a>
+      <a href="5-inventory-metrics-ops-managers.html">All Posts ↓</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://arniefelicilda.com" target="_blank" rel="noopener">Author Site</a>
+      <a href="https://youwereneverseries.arniefelicilda.com" target="_blank" rel="noopener">YWN Series</a>
+      <a href="https://ph.pinterest.com/arniebfelicilda" target="_blank" rel="noopener">Pinterest</a>
+      <a href="https://arfelicilda.kit.com" target="_blank" rel="noopener">Newsletter</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Arnie Rose Felicilda. Keystone Books.</span>
+    <a href="https://arniefelicilda.com" class="footer-back" target="_blank" rel="noopener">arniefelicilda.com →</a>
   </div>
 </footer>
 
 <script>
-(function(){
-  var h=document.getElementById('nav-hamburger');
-  var m=document.getElementById('nav-mobile');
-  if(h&&m){
-    h.addEventListener('click',function(e){e.stopPropagation();m.classList.toggle('open');});
-    document.querySelectorAll('.nav-mobile a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');});});
-    document.addEventListener('click',function(){m.classList.remove('open');});
-  }
-})();
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const navMobile = document.getElementById('nav-mobile');
+hamburger.addEventListener('click', () => {
+  navMobile.classList.toggle('open');
+});
+
+// Close mobile nav on link click
+navMobile.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navMobile.classList.remove('open'));
+});
+
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
